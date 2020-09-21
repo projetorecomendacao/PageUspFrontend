@@ -1,0 +1,17 @@
+<div [formGroup]="pageForm">
+    <div [formGroupName]="dimensao">
+        <div class="row mtb" [formGroupName]="dominio">
+            <div class='caixa-100 borda-baixo'>
+                <div class='caixa-20 d-flex justify-content-center align-items-center'>
+                <img [src]="figura" width="70px" height="70px">
+                </div>
+                <div class='caixa-70'>
+                    <textarea class="w-100 form-control" [formControlName]="campo" style="background-color: whitesmoke;"></textarea>
+                </div>
+                <div class="caixa-10">
+                    <img [src]="mudou('q3_15')" width="15px" height="15px">
+                </div>
+           </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<div [formGroup]="pageForm">
+    <div [formGroupName]="dimensao">
+        <div class="row mtb" [formGroupName]="dominio">
+            <div style="width: 100%;">
+                <app-base>
+                    <span class="col-12 col-md-12">
+                        <b>Observações:</b>
+                    </span>
+                    <span class="col-12 col-md-12">
+                        <div class="caixa-100">
+                            <div class="caixa-95">
+                                <textarea class="w-100 form-control" formControlName="{{campo}}" style="background-color: whitesmoke;"></textarea>
+                            </div>
+                            <div class="caixa-4">
+                                <img [src]="mudou('comments')" width="15px" height="15px">
+                            </div>
+                        </div>
+                    </span>
+                </app-base>
+            </div>
+        </div>
+    </div>
+</div>
+

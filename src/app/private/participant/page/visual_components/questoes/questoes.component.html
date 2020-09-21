@@ -1,0 +1,29 @@
+<div [formGroup]="pageForm">
+    <div [formGroupName]="dimensao">
+        <div class="row mtb" [formGroupName]="dominio">
+            <app-base>
+                <span class="col-12 col-md-9 borda-lado">
+                    <div class="caixa-100">
+                        <!-- <b class="azul">{{numero}}</b> !-->
+                        <div [innerHTML]="texto" style="text-align: justify;"> </div>
+                    </div>
+                    <div class="caixa-100">
+                        <ng-content></ng-content>
+                    </div>
+                </span>
+                <span class="col-12 col-md-3">
+                    <div class="caixa-85">
+                    <select style="background-color: whitesmoke;" class="w-100 form-control" formControlName="{{campo}}">
+                        <option value="" selected disabled>Selecione</option>
+                        <option value="S">{{sim}}-Sim</option>
+                        <option value="N">{{nao}}-Não</option>
+                    </select>
+                    </div>
+                    <div class="caixa-15">
+                        <img style="margin-left: 10px;" [src]="mudou('controlName')" width="15px" height="15px">
+                    </div>
+                </span>
+            </app-base>
+        </div>
+    </div>
+</div>
