@@ -1,8 +1,8 @@
 import { CognitiveDeficitComponent } from 'src/app/private/participant/page/psychological-aspects/cognitive-deficit/cognitive-deficit.component';
 
-export const REST_URL = 'http://localhost:8000/';
+//export const REST_URL = 'http://localhost:8000/';
 
-//export const REST_URL = 'https://page-brunella.herokuapp.com/';
+export const REST_URL = 'https://page-brunella.herokuapp.com/';
 
 export const REST_URL_PARTICIPANTS = REST_URL + 'participants/';
 
