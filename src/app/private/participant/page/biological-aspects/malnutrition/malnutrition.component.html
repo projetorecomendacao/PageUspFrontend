@@ -1,0 +1,19 @@
+<app-dominio [pageForm]="pageForm" [posicaoDominio]="posicaoDominio">
+  <app-questoes [pageForm]="pageForm" numeroQuestao='30' [posicaoDominio]="posicaoDominio"></app-questoes>
+  <app-questoes [pageForm]="pageForm" numeroQuestao='31' [posicaoDominio]="posicaoDominio"></app-questoes>
+  <app-questoes [pageForm]="pageForm" numeroQuestao='32' [posicaoDominio]="posicaoDominio"></app-questoes>
+  <app-questoes [pageForm]="pageForm" numeroQuestao='33' [posicaoDominio]="posicaoDominio">
+    <div class="caixa-100 d-flex justify-content-center align-items-center">
+      <div class="caixa-50" >
+        Se sim quantos quilos?
+      </div>
+      <div class="caixa-50">
+        <app-ler-select [pageForm]="pageForm" campo='d33_lost_weight_no_reason_amount' [posicaoDominio]="posicaoDominio" [opcoes]="opcoes"></app-ler-select>
+      </div>
+    </div>
+  </app-questoes>
+  <app-questoes [pageForm]="pageForm" numeroQuestao='34' [posicaoDominio]="posicaoDominio"></app-questoes>
+  <app-questoes [pageForm]="pageForm" numeroQuestao='35' [posicaoDominio]="posicaoDominio"></app-questoes>
+
+  <app-comments [pageForm]='pageForm' [posicaoDominio]="posicaoDominio"></app-comments>
+</app-dominio>

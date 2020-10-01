@@ -1,0 +1,25 @@
+<app-dominio [pageForm]="pageForm" [posicaoDominio]="posicaoDominio">
+  <app-questoes [pageForm]="pageForm" numeroQuestao='7' [posicaoDominio]="posicaoDominio">
+    <app-base>
+      <div class="caixa-70">Que idade o(a) senhor(a) sente ter?</div>
+      <div class="caixa-30">
+        <app-ler-numero [pageForm]="pageForm" campo='q7_age_self_perception' [posicaoDominio]="posicaoDominio"></app-ler-numero>
+      </div>
+    </app-base>
+    <app-base>
+      <div class="caixa-100">Por Quê?</div>
+      <div class="caixa-100">
+        <app-ler-textarea [pageForm]="pageForm" campo='q7_age_self_perception_why' [posicaoDominio]="posicaoDominio"></app-ler-textarea>
+      </div>
+    </app-base>
+  </app-questoes>
+  <app-questoes [pageForm]="pageForm" numeroQuestao='8' [posicaoDominio]="posicaoDominio"></app-questoes>
+  <app-questoes [pageForm]="pageForm" numeroQuestao='9' [posicaoDominio]="posicaoDominio"></app-questoes>
+  <app-questoes [pageForm]="pageForm" numeroQuestao='10' [posicaoDominio]="posicaoDominio"></app-questoes>
+  <app-questoes [pageForm]="pageForm" numeroQuestao='11' [posicaoDominio]="posicaoDominio"></app-questoes>
+  <app-questoes [pageForm]="pageForm" numeroQuestao='12' [posicaoDominio]="posicaoDominio"></app-questoes>
+  <app-questoes [pageForm]="pageForm" numeroQuestao='13' [posicaoDominio]="posicaoDominio"></app-questoes>
+  <app-questoes [pageForm]="pageForm" numeroQuestao='14' [posicaoDominio]="posicaoDominio"></app-questoes> 
+
+  <app-comments [pageForm]='pageForm' [posicaoDominio]="posicaoDominio"></app-comments>
+</app-dominio>

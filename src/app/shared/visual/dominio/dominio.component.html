@@ -1,0 +1,39 @@
+<!--Title-->
+<h2 class="text-center mt-5"><span class="{{corTitulo}} rounded-pill rounded-bottom-0 text-white px-5 py-2">{{nomeDominio}}</span></h2>
+<!--------->
+<!--Dados do Form e definição da div-->
+<div class="w-xl-75 w-lg-75 mx-auto border bg-white shadow-lg" [formGroup]="pageForm">
+  <div class="form-group p-3" [formGroupName]="dimensao">
+    <div class="form-group p-3" [formGroupName]="dominio">
+      <app-base>
+        <!-- Lado Esquerdo-->
+        <div class="col-12 col-md-1 d-flex justify-content-center align-items-center example Text3" style="background-color: lightgrey;">
+          <b>{{nomeDominio}}</b>
+        </div>
+        
+        <!-- Centro -->
+        <!--Perguntas-->
+        <span class="col-12 col-md-9">
+            <ng-content></ng-content>
+        </span> 
+        <!-- final das perguntas -->
+
+        <!-- Lado Direito-->  
+        <span class="col-12 col-md-1 d-flex justify-content-center align-items-center example Text3 {{corLateral}}" >
+          <!--Pontuation-->
+          Pontuação: (<b>{{conta_certo()}}</b>) - máximo: ({{max_score}})
+        </span>
+        <span class="col-12 col-md-1 d-flex justify-content-center align-items-center example Text3 {{corLateral}}">
+            <!--Intervenção-->
+            <app-investigar [campo]='campoInvestigar' [pageForm]='pageForm' [dominio]='dominio' [dimensao]='dimensao'></app-investigar>
+        </span>          
+        
+        <div class="caixa-100">
+          <app-status [valido]="formValido()" [branco]="branco" [errado]="errado"></app-status>
+        </div> 
+        
+      </app-base>
+    </div>
+  </div>
+</div>
+<!----------->

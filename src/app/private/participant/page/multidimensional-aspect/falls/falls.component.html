@@ -1,0 +1,44 @@
+<app-dominio [pageForm]="pageForm" [posicaoDominio]="posicaoDominio">
+  <app-questoes [pageForm]="pageForm" numeroQuestao='88' [posicaoDominio]="posicaoDominio">
+    <div class="caixa-100 d-flex align-items-center">
+      <div class="caixa-30">
+        Se sim quantas?
+      </div>
+      <div class="caixa-30">
+          <app-ler-numero [pageForm]="pageForm" campo='q88_amount_falls_last_year' [posicaoDominio]="posicaoDominio"></app-ler-numero>
+      </div>
+    </div>
+  </app-questoes>
+  <app-questoes [pageForm]="pageForm" numeroQuestao='89' [posicaoDominio]="posicaoDominio"></app-questoes>
+  <app-base>
+    <div class="caixa-100">
+      <b class="azul">90. </b> O que o (a) senhor(a) estava fazendo quando sofreu essa(s) queda(s)? 
+      <b>[Investigar atividade realizada, local, horário do dia, tipo de calçado, riscos ambientais etc.]</b> 
+    </div>
+    <div class="caixa-100">
+      <app-ler-textarea [pageForm]="pageForm" campo='q90_falls_activity' [posicaoDominio]="posicaoDominio"></app-ler-textarea>
+    </div>
+  </app-base>
+  <app-questoes [pageForm]="pageForm" numeroQuestao='91' [posicaoDominio]="posicaoDominio"></app-questoes>
+  <app-questoes [pageForm]="pageForm" numeroQuestao='92' [posicaoDominio]="posicaoDominio"></app-questoes>
+  <app-questoes [pageForm]="pageForm" numeroQuestao='93' [posicaoDominio]="posicaoDominio"></app-questoes>
+  <div class="caixa-100 centro2">
+    Baseado nas respostas de itens anteriores, identifique se o idoso apresenta/utiliza:
+  </div> 
+  <div class="caixa-100 azulceu">
+    <app-questoes [pageForm]="pageForm" numeroQuestao='94' [posicaoDominio]="posicaoDominio"></app-questoes>
+    <app-questoes [pageForm]="pageForm" numeroQuestao='95' [posicaoDominio]="posicaoDominio"></app-questoes>
+    <app-questoes [pageForm]="pageForm" numeroQuestao='96' [posicaoDominio]="posicaoDominio"></app-questoes>
+    <app-questoes [pageForm]="pageForm" numeroQuestao='97' [posicaoDominio]="posicaoDominio"></app-questoes> 
+
+    <app-questoes [pageForm]="pageForm" numeroQuestao='98' [posicaoDominio]="posicaoDominio"></app-questoes>
+    <app-questoes [pageForm]="pageForm" numeroQuestao='99' [posicaoDominio]="posicaoDominio"></app-questoes>
+    <app-questoes [pageForm]="pageForm" numeroQuestao='100' [posicaoDominio]="posicaoDominio"></app-questoes>
+    <app-questoes [pageForm]="pageForm" numeroQuestao='101' [posicaoDominio]="posicaoDominio"></app-questoes>
+    <app-questoes [pageForm]="pageForm" numeroQuestao='102' [posicaoDominio]="posicaoDominio"></app-questoes>
+    <app-questoes [pageForm]="pageForm" numeroQuestao='103' [posicaoDominio]="posicaoDominio"></app-questoes>
+    <app-questoes [pageForm]="pageForm" numeroQuestao='104' [posicaoDominio]="posicaoDominio"></app-questoes>
+  </div>
+
+  <app-comments [pageForm]='pageForm' [posicaoDominio]="posicaoDominio"></app-comments>
+</app-dominio>

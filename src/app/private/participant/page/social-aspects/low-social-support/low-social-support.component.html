@@ -1,0 +1,72 @@
+<app-dominio [pageForm]="pageForm" [posicaoDominio]="posicaoDominio">
+  <app-base>
+    <div class="caixa-100">
+      <b class='azul'>55. </b><strong> [Instruções: Fazer registro dos familiares vivos].</strong>  O(a) senhor(a) tem?
+    </div>
+    <div class="caixa-100">
+      <div class="caixa-50 d-flex justify-content-center align-items-center">
+        <div class="caixa-50 d-flex justify-content-end">Conjugue:</div>
+        <div class="caixa-50">
+          <app-ler-select [pageForm]="pageForm" campo='q55_spouse' [posicaoDominio]="posicaoDominio" [opcoes]="opcoes"></app-ler-select>
+        </div>
+      </div>
+      <div class="caixa-50 d-flex justify-content-center align-items-center">
+        <div class="caixa-50"></div>
+        <div class="caixa-50"></div>
+      </div>
+    </div>
+    <div class="caixa-100">
+      <div class="caixa-50 d-flex justify-content-center align-items-center">
+        <div class="caixa-50 d-flex justify-content-end">Pai:</div>
+        <div class="caixa-50">
+          <app-ler-select [pageForm]="pageForm" campo='q55_father' [posicaoDominio]="posicaoDominio" [opcoes]="opcoes"></app-ler-select>
+        </div>
+      </div>
+      <div class="caixa-50 d-flex justify-content-center align-items-center">
+        <div class="caixa-50 d-flex justify-content-end">Mãe:</div>
+        <div class="caixa-50">
+          <app-ler-select [pageForm]="pageForm" campo='q55_mother' [posicaoDominio]="posicaoDominio" [opcoes]="opcoes"></app-ler-select>
+        </div>
+      </div>
+    </div>
+    <div class="caixa-100">
+      <div class="caixa-50 d-flex justify-content-center align-items-center">
+        <div class="caixa-50 d-flex justify-content-end">Irmãos (número):</div>
+        <div class="caixa-50">
+          <app-ler-numero [pageForm]="pageForm" campo='q55_brothers' [posicaoDominio]="posicaoDominio"></app-ler-numero>
+        </div>
+      </div>
+      <div class="caixa-50 d-flex justify-content-center align-items-center">
+        <div class="caixa-50 d-flex justify-content-end">Filhos (número):</div>
+        <div class="caixa-50">
+          <app-ler-numero [pageForm]="pageForm" campo='q55_children' [posicaoDominio]="posicaoDominio"></app-ler-numero>
+        </div>
+      </div>
+    </div>
+    <div class="caixa-100">
+      <div class="caixa-50 d-flex justify-content-center align-items-center">
+        <div class="caixa-50 d-flex justify-content-end">Netos (número):</div>
+        <div class="caixa-50">
+          <app-ler-numero [pageForm]="pageForm" campo='q55_gran_children' [posicaoDominio]="posicaoDominio"></app-ler-numero>
+        </div>
+      </div>
+      <div class="caixa-50 d-flex justify-content-center align-items-center">
+        <div class="caixa-50 d-flex justify-content-end">Bisnetos (número):</div>
+        <div class="caixa-50">
+          <app-ler-numero [pageForm]="pageForm" campo='q55_great_gran_children' [posicaoDominio]="posicaoDominio"></app-ler-numero>
+        </div>
+      </div>
+    </div>
+  </app-base>
+ 
+  <app-questoes [pageForm]="pageForm" numeroQuestao='56' [posicaoDominio]="posicaoDominio"></app-questoes>
+  <app-questoes [pageForm]="pageForm" numeroQuestao='57' [posicaoDominio]="posicaoDominio"></app-questoes>
+  <app-questoes [pageForm]="pageForm" numeroQuestao='58' [posicaoDominio]="posicaoDominio"></app-questoes>
+  <app-questoes [pageForm]="pageForm" numeroQuestao='59' [posicaoDominio]="posicaoDominio"></app-questoes>
+  <app-questoes [pageForm]="pageForm" numeroQuestao='60' [posicaoDominio]="posicaoDominio"></app-questoes>
+  <app-questoes [pageForm]="pageForm" numeroQuestao='61' [posicaoDominio]="posicaoDominio"></app-questoes>
+  <app-questoes [pageForm]="pageForm" numeroQuestao='62' [posicaoDominio]="posicaoDominio"></app-questoes> 
+  <app-questoes [pageForm]="pageForm" numeroQuestao='63' [posicaoDominio]="posicaoDominio"></app-questoes> 
+
+  <app-comments [pageForm]='pageForm' [posicaoDominio]="posicaoDominio"></app-comments>
+</app-dominio>

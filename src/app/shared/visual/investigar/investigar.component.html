@@ -1,0 +1,16 @@
+<div [formGroup]="pageForm">
+    <div [formGroupName]="dimensao">
+        <div class="row mtb" [formGroupName]="dominio">
+            <!--Intervenção-->
+            Necessita de investigação?                      
+            <select class="investigar"  [formControlName]="campo">
+                <option value="" selected disabled></option>
+                <option style="color: red;" value="S">Sim</option>
+                <option style="color: blue; " value="N">Não</option>
+            </select>
+            <img [src]="mudou('campo')" width="15px" height="15px" style="margin-top: 20px;">
+        </div>
+    </div>
+</div>
+
+<!-- -->

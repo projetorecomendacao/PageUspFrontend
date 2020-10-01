@@ -1,0 +1,7 @@
+  <div class="d-flex align-items-center" style="width: 100%; color: DodgerBlue; font-weight: bold;">
+    <label>{{label}}</label>
+  </div> 
+  <ng-content></ng-content> 
+  <div class="d-flex help-block" style="width: 100%; margin-top: 10px" *ngIf="hasSuccess()" ><font color="green"> Ok </font></div>
+  <div class="d-flex help-block" style="width: 100%; margin-top: 10px" *ngIf="hasError()" ><font color="red"> {{errorMessage}} </font></div>
+  <div style="width: 100; height: 30px;"></div>

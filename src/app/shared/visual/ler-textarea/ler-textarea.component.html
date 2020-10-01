@@ -1,0 +1,12 @@
+<div [formGroup]="pageForm">
+    <div [formGroupName]="dimensao">
+        <div [formGroupName]="dominio">
+            <div class="caixa-90">
+               <textarea class="w-100 form-control fu" formControlName="{{campo}}"></textarea>
+            </div>
+            <div class="caixa-10">
+                <img style="margin-left: 10px;" [src]="mudou('controlName')" width="15px" height="15px">                
+            </div>
+        </div>
+    </div>
+</div>
