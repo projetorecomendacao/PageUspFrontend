@@ -22,7 +22,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 const config = new AuthServiceConfig([
   {
     id: GoogleLoginProvider.PROVIDER_ID,
-    provider: new GoogleLoginProvider('828775864880-255hvrrt48he9re9td2372a7h1eg5h6o.apps.googleusercontent.com')
+    provider: new GoogleLoginProvider('164416639233-1h26ajia8qontaalsev3v8cgblbdmvm4.apps.googleusercontent.com')
   }
 ]);
 
