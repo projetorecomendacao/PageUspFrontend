@@ -20,7 +20,7 @@ export class SensoryDeficitForm {
         q23_do_activities_problems: [data.q23_do_activities_problems,[Validators.required]],
         comments: [data.comments,[Validators.required]],
         need_investigation: [data.need_investigation,[Validators.required]],
-        max_score: [data.max_score,[Validators.required]],
+        max_score: [this.estruturaPage.getMax_score(POSI_sensoryDeficit),[Validators.required]],
         score: [data.score,[Validators.required]],
       })
     } else {

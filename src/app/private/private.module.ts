@@ -71,7 +71,7 @@ import { ObservationsPsychologicalForm } from '../shared/forms/observations-psyc
 import { MatStepperModule} from '@angular/material/stepper'
 import { CabecaPageForm } from '../shared/forms/cabeca-page.form';
 import { FinalAnaliseComponent } from './participant/page/final-analise/final-analise.component';
-import { FinalAnaliseForm } from '../shared/forms/final-analise.form';
+import { DemandMapForm } from '../shared/forms/demand-map.form';
 import { EscoresComponent } from './participant/page/final-analise/escores/escores.component';
 import { GraficoDominiosComponent } from './participant/page/final-analise/grafico-dominios/grafico-dominios.component';
 import { GraficoDimesoesComponent } from './participant/page/final-analise/grafico-dimesoes/grafico-dimesoes.component';
@@ -102,9 +102,10 @@ import { CommentsDimensaoComponent } from '../shared/visual/comments-dimensao/co
 import { RecomendacaoComponent } from './participant/page/final-analise/recomendacao/recomendacao.component';
 import { AtividadesRecomendadasComponent } from './participant/page/final-analise/recomendacao/atividades-recomendadas/atividades-recomendadas.component';
 import { AtividadesRec } from '../shared/services/atividades-service';
+import { NgxMaskModule, IConfig } from 'ngx-mask'
 
 
-
+export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
 
 
 @NgModule({
@@ -173,7 +174,10 @@ import { AtividadesRec } from '../shared/services/atividades-service';
     MatTabsModule,
     ProgressBarModule,
     MatStepperModule,
-    ChartsModule
+    ChartsModule,
+    NgxMaskModule.forRoot({
+      showMaskTyped : true,
+    }) 
   ],
   providers: [UserService,
     PageForm,
@@ -200,12 +204,13 @@ import { AtividadesRec } from '../shared/services/atividades-service';
     ObservationsSocialForm,
     ObservationsPsychologicalForm,
     CabecaPageForm,
-    FinalAnaliseForm,
+    DemandMapForm,
     ChecaCampo,
     PageGerador,
     EstruturaPage,
     EstruturaQuestao,
-    AtividadesRec
+    AtividadesRec,
+    DemandMapForm
   ]
 })
 export class PrivateModule { }

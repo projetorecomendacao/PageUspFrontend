@@ -2,6 +2,7 @@ export interface Participant {
   id: number;
   p00_email: string;
   p01_name: string;
+  p01_name_social: string;
   p02_address: string;
   p03_communication: string;
   p04_birth_date: string;
@@ -27,7 +28,7 @@ export interface ParticipantSituation {
   p14_lives_with: string;
   p15_has_religion: string;
   p15_religion: string;
-  p16_health_monitoring: string;
+  p16_health_self_report: string;
   p20_weight: number;
   p20_height: number;
   p20_IMC: number;

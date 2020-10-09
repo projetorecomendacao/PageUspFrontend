@@ -19,6 +19,7 @@ export class ParticipantEditComponent implements OnInit {
   public addParticipantForm: FormGroup = this.form.group({
     p00_email: ['', Validators.required],
     p01_name: ['', Validators.required],
+    p01_name_social: [''],
     p02_address: ['', Validators.required],
     p03_communication: ['', Validators.required],
     p04_birth_date: ['', Validators.required],

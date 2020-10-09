@@ -21,8 +21,8 @@ export class CabecaPageForm{
         interviewed: [data.interviewed,[Validators.required]],
         interviewer: [data.interviewer,[Validators.required]],
         avaliation_date: [data.avaliation_date,[Validators.required]],
-        start_time: [new Date().getHours(),[Validators.required]],
-        end_time: [new Date().getHours(),[Validators.required]],
+        start_time: [data.start_time,[Validators.required]],
+        end_time: [data.end_time,[Validators.required]],
         //created_at: [data.created_at,[Validators.required]],
         //updated_at: [data.updated_at,[Validators.required]],
        });
@@ -35,8 +35,8 @@ export class CabecaPageForm{
         interviewed: ['',[Validators.required]],
         interviewer: [this.userService.getName(),[Validators.required]],
         avaliation_date: ['',[Validators.required]],
-        start_time: [new Date().getHours(),[Validators.required]],
-        end_time: [new Date().getHours(),[Validators.required]],
+        start_time: ['',[Validators.required]],
+        end_time: ['00',[Validators.required]],
         //created_at: [,[Validators.required]],
         //updated_at: ['',[Validators.required]],
        });

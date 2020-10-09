@@ -12,6 +12,7 @@ import { PageService } from 'src/app/shared/services/page.service';
 import { DAOService } from 'src/app/shared/services/dao.service';
 import { PageGerador } from 'src/app/shared/services/page.gerador';
 import { REST_URL_PAGE } from 'src/app/shared/constantes/REST_API_URLs';
+import { EstruturaPage } from 'src/app/shared/constantes/estruturaPage';
 
 
 @Component({
@@ -28,7 +29,8 @@ export class PagesListComponent implements OnInit {
   public pages: Page[] = new Array<Page>();
 
   constructor(private router: Router, private pageService: PageService, 
-              private daoService: DAOService, private pageGerador : PageGerador, private userService: UserService) {
+              private daoService: DAOService, private pageGerador : PageGerador, 
+              private userService: UserService, private estruturaPage : EstruturaPage) {
 
   }
 
@@ -52,60 +54,93 @@ export class PagesListComponent implements OnInit {
     });
   }
 
+
+  verificaPage(p : Page): boolean {
+    if (p.participant_situation == null) return false;
+    if (p.multidisciplinaryDomain == null) return false;
+    if (p.psychologicalAspects == null) return false;
+    if (p.biologicalAspects == null) return false;
+    if (p.socialAspects == null) return false;
+    if (p.demandMap == null) return false;
+    return true
+  }
+
   // Sets the page and redirects
   goTo(page: number) {
-    console.log(`page: ${page}`)
     //Inicializa o PAGe no page service
     this.pageService.page = this.pageGerador.pegaPage(this.pageService.participant);    
     if (page > 0) {
       this.daoService.getObject(REST_URL_PAGE,page.toString()).subscribe((response : any)  =>{
         //monta os aspectos psicológicos do PAGe
-        console.log(response)
-        let psi : PsychologicalAspects
-        (
-          response.psi, 
-          response.cognitionDeficit, 
-          response.negativeAttitudesAging,
-          response.depression
-        )
-        console.log(psi);
+
+        let psi : PsychologicalAspects = {           
+          id : response.psi[0].id,
+          cognition_deficit_instance : response.cognitionDeficit[0],
+          negative_attitudes_aging_instance : response.negativeAttitudesAging[0], 
+          depression_instance :  response.depression[0],
+          comments :  response.psi[0].comments,
+          max_score : 19
+        }
+
+
         //monta os aspectos biológicos do PAGe
-        let bio : BiologicalAspects
-        (
-          response.bio,
-          response.sensoryDeficit,
-          response.functionalDisability,
-          response.malnutrition,
-          response.cardiovascularFactors,
-          response.misuseMedications
-        )
+        let bio : BiologicalAspects = {
+          id: response.bio[0].id,
+          sensoryDeficit_instance: response.sensoryDeficit[0],
+          functionalDisability_instance: response.functionalDisability[0],
+          malNutrition_instance: response.malnutrition[0],
+          cardiovascularFactors_instance: response.cardiovascularFactors[0],
+          misuseMedications_instance: response.misuseMedications[0],
+          comments: response.bio[0].comments,
+          max_score: 33
+        }  
+
         //monta os aspectos sociais do PAGe
-        let soc :  SocialAspects 
-        (
-          response.soc,
-          response.lowSocialSupport,
-          response.environmentalProblems,
-          response.violence
-        )
+        let soc :  SocialAspects = {
+          id: response.soc[0].id,
+          lowSocialSupport_instance: response.lowSocialSupport[0],
+          environmentalProblems_instance: response.environmentalProblems[0],
+          violence_instance: response.violence[0],
+          comments: response.soc[0].comments,
+          max_score : 31
+        }
+
         //monta os aspectos multidimensional do PAGe
-        let mul : MultidisciplinaryDomain
-        (
-          response.mul,
-          response.falls
-        )
+        let mul : MultidisciplinaryDomain = {
+          id: response.mul[0].id,
+          falls_instance: response.falls[0],
+          comments: response.mul[0].comments,
+          max_score: 16
+        }
         //cria o page
-        let page_ : Page
-        (
-          response.cabecaPage,
-          this.pageService.participant,
-          response.participanteSituation,
-          psi, bio, soc, mul, response.demandMap 
-        )
+
+        let page_ : Page = 
+        {
+          id : response.cabecaPage.id,
+          service: response.cabecaPage.service,
+          entrance: response.cabecaPage.entrance,
+          interviewed: response.cabecaPage.interviewed,
+          interviewer: response.cabecaPage.interviewer,
+          avaliation_date: response.cabecaPage.avaliation_date,
+          start_time: response.cabecaPage.start_time,
+          end_time: response.cabecaPage.end_time,
+          created_at: response.cabecaPage.created_at,
+          updated_at: response.cabecaPage.updated_at,
+          
+          gerontologist_id: response.cabecaPage.gerontologist,
+        
+          participant: this.pageService.participant,
+          participant_situation: response.participanteSituation[0],
+          psychologicalAspects: psi,
+          biologicalAspects: bio,
+          socialAspects: soc,
+          multidisciplinaryDomain: mul,
+          demandMap : response.demandMap[0],
+        }
         //seta o page
-        console.log(page_)
         this.pageService.page = page_;
-        console.log(this.pageService.page);
         this.router.navigate(['private/participant/page/']).then();
+        
       },error => {
         alert('Page não encontrado..');  
         this.router.navigate(['private/']).then();

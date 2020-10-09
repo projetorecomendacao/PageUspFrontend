@@ -16,9 +16,9 @@ export interface FunctionalDisability {
   q24_to_shop: string;
   q25_use_transport: string;
   q26_to_cook: string;
-  q27UseTelephone: string;
+  q27_useTelephone: string;
   q28_dress_up: string;
-  q29TakeShower: string;
+  q29_takeShower: string;
   comments: string;
   need_investigation : string;
   max_score : number;

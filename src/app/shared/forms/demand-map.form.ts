@@ -1,18 +1,19 @@
 import {FormGroup, FormBuilder, Validators} from '@angular/forms';
 import { Injectable } from '@angular/core';
-import { FinalAnalise } from 'src/app/shared/models/final-analise';
+import { DemandMap } from '../models/demand-map';
+
 
 
 @Injectable()
-export class FinalAnaliseForm{
+export class DemandMapForm{
 
-  private finalAnaliseForm: FormGroup;
+  private demandMapForm: FormGroup;
   
   constructor(private fb: FormBuilder) { }
   
-  geraFormGroup(data?: FinalAnalise): FormGroup {
+  geraFormGroup(data?: DemandMap): FormGroup {
     if (data){
-        this.finalAnaliseForm = this.fb.group({
+        this.demandMapForm = this.fb.group({
             dm3_unmet_demands: [data.dm3_unmet_demands, [Validators.required]],
             gerontologist_assessment: [data.gerontologist_assessment,[Validators.required]],
             demands_problems: [data.demands_problems, [Validators.required]],
@@ -22,7 +23,7 @@ export class FinalAnaliseForm{
     }
     else 
     {
-        this.finalAnaliseForm = this.fb.group({
+        this.demandMapForm = this.fb.group({
             dm3_unmet_demands: ['', [Validators.required]],
             gerontologist_assessment: ['',[Validators.required]],
             demands_problems: ['', [Validators.required]],
@@ -30,6 +31,6 @@ export class FinalAnaliseForm{
             actions_organization: ['', [Validators.required]],
         });
     }
-    return this.finalAnaliseForm;
+    return this.demandMapForm;
   }
 }

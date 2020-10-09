@@ -3,7 +3,7 @@ import { PsychologicalAspects } from './psychological-aspects.model';
 import { BiologicalAspects } from './biological-aspects.model';
 import { SocialAspects } from './social-aspects.model';
 import { MultidisciplinaryDomain } from './multidimentional-aspects';
-import { FinalAnalise } from './final-analise';
+import { DemandMap } from './demand-map';
 import { Time } from '@angular/common';
 
 export class Page {
@@ -13,8 +13,8 @@ export class Page {
   interviewed: string;
   interviewer: string;
   avaliation_date: Date;
-  start_time: Time;
-  end_time: Time;
+  start_time: string;
+  end_time: string;
   created_at: Date;
   updated_at: Date;
   
@@ -26,7 +26,6 @@ export class Page {
   biologicalAspects: BiologicalAspects;
   socialAspects: SocialAspects;
   multidisciplinaryDomain: MultidisciplinaryDomain;
-  finalAnalise : FinalAnalise;
-
+  demandMap : DemandMap;
 
 }

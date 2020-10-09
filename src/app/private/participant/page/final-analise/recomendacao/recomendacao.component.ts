@@ -40,27 +40,27 @@ export class RecomendacaoComponent implements OnInit {
     //Déficit cognitivo
     this.psi_co  = this.pageForm.get('psychologicalAspectsForm').get('cognitiveDeficitForm').get('score').value * (100/6); 
     //Depressão
-    this.psi_de  = this.pageForm.get('psychologicalAspectsForm').get('depressionForm').get('score').value * (100/6);
+    this.psi_de  = this.pageForm.get('psychologicalAspectsForm').get('depressionForm').get('score').value * (100/5);
     //Atitude Envelhecimento
-    this.psi_ne  = this.pageForm.get('psychologicalAspectsForm').get('negativeAttitudesAgingForm').get('score').value * (100/2);
+    this.psi_ne  = this.pageForm.get('psychologicalAspectsForm').get('negativeAttitudesAgingForm').get('score').value * (100/8);
     //Cardio Vascular
-    this.bio_ca = this.pageForm.get('biologicalAspectsForm').get('cardiovascularFactorsForm').get('score').value * (100/9);
+    this.bio_ca = this.pageForm.get('biologicalAspectsForm').get('cardiovascularFactorsForm').get('score').value * (100/8);
     //Incapacidade Funcional
     this.bio_fu = this.pageForm.get('biologicalAspectsForm').get('functionalDisabilityForm').get('score').value * (100/6);
     //Desnutrição
-    this.bio_ma = this.pageForm.get('biologicalAspectsForm').get('malnutritionForm').get('score').value * (100/7);
+    this.bio_ma = this.pageForm.get('biologicalAspectsForm').get('malnutritionForm').get('score').value * (100/6);
     //Uso medicamentos
     this.bio_mi = this.pageForm.get('biologicalAspectsForm').get('misuseMedicationsForm').get('score').value * (100/9);
     //Déficit Sensorial
-    this.bio_se = this.pageForm.get('biologicalAspectsForm').get('sensoryDeficitForm').get('score').value * (100/5);
+    this.bio_se = this.pageForm.get('biologicalAspectsForm').get('sensoryDeficitForm').get('score').value * (100/4);
     //Problemas ambientais
-    this.soc_en = this.pageForm.get('socialAspectsForm').get('environmentalProblemsForm').get('score').value * (100/16);
+    this.soc_en = this.pageForm.get('socialAspectsForm').get('environmentalProblemsForm').get('score').value * (100/15);
     //Baixo suporte social
     this.soc_lo = this.pageForm.get('socialAspectsForm').get('lowSocialSupportForm').get('score').value * (100/8);
     //Violência
     this.soc_vi = this.pageForm.get('socialAspectsForm').get('violenceForm').get('score').value * (100/8);
     //Quedas
-    this.mul_fa = this.pageForm.get('multidimensionalAspectsForm').get('fallsForm').get('score').value * (100/15);  
+    this.mul_fa = this.pageForm.get('multidimensionalAspectsForm').get('fallsForm').get('score').value * (100/16);  
     this.paciente = {
       'psi_co' : this.psi_co,
       'psi_de' : this.psi_de,

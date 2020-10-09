@@ -16,6 +16,12 @@
       <input class="w-100 form-control fu" type="text" id="nome" formControlName="p01_name" [ngClass]="{ 'is-invalid': submitted && !f.p01_name.valid }" [ngClass]="{ 'is-valid': f.p01_name.valid }">
     </app-input>
   </div>
+  <!-- Social -->
+  <div style="width: 100%;" >
+    <app-input errorMessage='Nome inválido' label='Nome'>
+      <input class="w-100 form-control fu" type="text" id="nome" formControlName="p01_name_social" [ngClass]="{ 'is-invalid': submitted && !f.p01_name_social.valid }" [ngClass]="{ 'is-valid': f.p01_name_social.valid }">
+    </app-input>
+  </div>
   <!-------->
   <!--Address-->
   <div style="width: 100%;" >

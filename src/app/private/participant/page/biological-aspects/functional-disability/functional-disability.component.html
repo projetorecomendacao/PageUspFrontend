@@ -1,10 +1,16 @@
 <app-dominio [pageForm]="pageForm" [posicaoDominio]="posicaoDominio">
-  <app-questoes [pageForm]="pageForm" numeroQuestao='24' [posicaoDominio]="posicaoDominio"></app-questoes>
-  <app-questoes [pageForm]="pageForm" numeroQuestao='25' [posicaoDominio]="posicaoDominio"></app-questoes>
-  <app-questoes [pageForm]="pageForm" numeroQuestao='26' [posicaoDominio]="posicaoDominio"></app-questoes>
-  <app-questoes [pageForm]="pageForm" numeroQuestao='27' [posicaoDominio]="posicaoDominio"></app-questoes>
-  <app-questoes [pageForm]="pageForm" numeroQuestao='28' [posicaoDominio]="posicaoDominio"></app-questoes>
-  <app-questoes [pageForm]="pageForm" numeroQuestao='29' [posicaoDominio]="posicaoDominio"></app-questoes>
-
+  <div class="caixa-100 d-flex justify-content-center align-items-center">
+    <div class="caixa-15">
+      <strong>O(a) senhor(a) necessita de ajuda para:</strong>
+    </div>
+    <div class="caixa-85">
+      <app-questoes [pageForm]="pageForm" numeroQuestao='24' [posicaoDominio]="posicaoDominio"></app-questoes>
+      <app-questoes [pageForm]="pageForm" numeroQuestao='25' [posicaoDominio]="posicaoDominio"></app-questoes>
+      <app-questoes [pageForm]="pageForm" numeroQuestao='26' [posicaoDominio]="posicaoDominio"></app-questoes>
+      <app-questoes [pageForm]="pageForm" numeroQuestao='27' [posicaoDominio]="posicaoDominio"></app-questoes>
+      <app-questoes [pageForm]="pageForm" numeroQuestao='28' [posicaoDominio]="posicaoDominio"></app-questoes>
+      <app-questoes [pageForm]="pageForm" numeroQuestao='29' [posicaoDominio]="posicaoDominio"></app-questoes>
+    </div>
+  </div>
   <app-comments [pageForm]='pageForm' [posicaoDominio]="posicaoDominio"></app-comments>
 </app-dominio>

@@ -26,7 +26,7 @@ export class PageGerador{
         p14_lives_with: 'N',
         p15_has_religion: 'N',
         p15_religion: 'N',
-        p16_health_monitoring: 'N',
+        p16_health_self_report: 'N',
         p20_weight: 3,
         p20_height: 3,
         p20_IMC: 3,
@@ -110,9 +110,9 @@ export class PageGerador{
         q24_to_shop: 'N',
         q25_use_transport: 'S',
         q26_to_cook: 'N',
-        q27UseTelephone: 'S',
+        q27_useTelephone: 'S',
         q28_dress_up: 'N',
-        q29TakeShower: 'S',
+        q29_takeShower: 'S',
         comments: 'N',
         need_investigation: 'S',
         max_score: 0,
@@ -311,7 +311,7 @@ export class PageGerador{
 
     private mul : MultidisciplinaryDomain = ({id:1, comments : 'Opa', falls_instance: this.falls, max_score : 0});
 
-    private finalAnalise = {
+    private demandMap = {
         id : 0,
         created_at : new Date(), 
         updated_at : new Date(),
@@ -326,14 +326,14 @@ export class PageGerador{
     pegaPage(participant: Participant): Page{
         var page : Page = ({ id: -1, service: 'Usp',  entrance: new Date(), interviewed: 'Participante',
             interviewer: 'Teste', avaliation_date: new Date(), created_at: new Date(), updated_at: new Date(),
-            gerontologist_id : 1 , start_time : null, end_time : null, 
+            gerontologist_id : 1 , start_time : '12:00:00', end_time : '00:00:00', 
             participant : participant,
             participant_situation: this.participantSituation,
             psychologicalAspects : this.psi,
             biologicalAspects: this.bio, 
             socialAspects: this.soc, 
             multidisciplinaryDomain: this.mul,
-            finalAnalise : this.finalAnalise
+            demandMap : this.demandMap
             });
         return page;
     }

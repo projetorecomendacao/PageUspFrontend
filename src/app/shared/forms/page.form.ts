@@ -7,7 +7,7 @@ import { MultidimensionalAspectForm } from './multidimensional-aspect.form';
 import { ParticipantFormForm } from './participant-form.form';
 import { Page } from 'src/app/shared/models/page.model';
 import { CabecaPageForm } from './cabeca-page.form';
-import { FinalAnaliseForm } from './final-analise.form';
+import { DemandMapForm } from './demand-map.form';
 
 @Injectable()
 export class PageForm{
@@ -19,7 +19,7 @@ export class PageForm{
                 private multidimensionalAspectsForm: MultidimensionalAspectForm,
                 private participantFormForm: ParticipantFormForm,
                 private cabecaPageForm : CabecaPageForm,
-                private finalAnaliseForm: FinalAnaliseForm){ }
+                private demandMapForm: DemandMapForm){ }
 
     public geraFormGroup(data?: Page): FormGroup{
         if (data){
@@ -30,7 +30,7 @@ export class PageForm{
                 'socialAspectsForm': this.socialAspectsForm.geraFormGroup(data.socialAspects),
                 'multidimensionalAspectsForm': this.multidimensionalAspectsForm.geraFormGroup(data.multidisciplinaryDomain),
                 'participantFormForm': this.participantFormForm.geraFormGroup(data.participant_situation),
-                'finalAnaliseForm' : this.finalAnaliseForm.geraFormGroup(data.finalAnalise)
+                'demandMapForm' : this.demandMapForm.geraFormGroup(data.demandMap)
             })
         }
         else 
@@ -42,7 +42,7 @@ export class PageForm{
                 'socialAspectsForm': this.socialAspectsForm.geraFormGroup(),
                 'multidimensionalAspectsForm': this.multidimensionalAspectsForm.geraFormGroup(),
                 'participantFormForm': this.participantFormForm.geraFormGroup(),
-                'finalAnaliseForm' : this.finalAnaliseForm.geraFormGroup()
+                'demandMapForm' : this.demandMapForm.geraFormGroup()
             })
         }
         return this._pageForm;

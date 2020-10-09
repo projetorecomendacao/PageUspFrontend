@@ -1,4 +1,4 @@
-export interface FinalAnalise {
+export interface DemandMap {
     id : number;
     created_at : Date; 
     updated_at : Date;

@@ -21,7 +21,7 @@
 </div> 
 
 <div class="w-xl-75 w-lg-75 mx-auto border bg-white shadow-lg" [formGroup]="pageForm">
-  <div class="form-group p-3" formGroupName="finalAnaliseForm">
+  <div class="form-group p-3" formGroupName="demandMapForm">
     <app-base>
       <div class="caixa-100">
         <div class="caixa-90">
@@ -56,15 +56,13 @@
   </div>
 </div>
 
-
-
 <h2 class="text-center mt-5">
   <span class="rounded-pill rounded-bottom-0 text-white px-5 py-2" style="font-size: 16px; background-color:gray; font-weight: bold ;">
       II. Planejamento das Ações
   </span>
 </h2>
 <div class="w-xl-75 w-lg-75 mx-auto border bg-white shadow-lg" [formGroup]="pageForm">
-  <div class="form-group p-3" formGroupName="finalAnaliseForm">
+  <div class="form-group p-3" formGroupName="demandMapForm">
 
     <app-base>
       <div class="caixa-100">
@@ -126,6 +124,30 @@
 
 <h2 class="text-center mt-5">
   <span class="rounded-pill rounded-bottom-0 text-white px-5 py-2" style="font-size: 16px; background-color:gray; font-weight: bold ;">
+      Horário Término
+  </span>
+</h2>
+<div class="w-xl-75 w-lg-75 mx-auto border bg-white shadow-lg" [formGroup]="pageForm">
+  <div class="form-group p-3" formGroupName="cabecaPageForm">
+    <app-base>
+      <div class="caixa-100">
+        <div class="caixa-50">
+          Horário de término de preenchimento do PAGe
+        </div>
+        <div class="caixa-20">
+          <input type="text" class="w-100 form-control" formControlName="end_time">
+        </div>
+        <div class="caixa-10">
+          <img style="margin-left: 10px;" [src]="mudou('demands_problems')" width="15px" height="15px">
+        </div>
+      </div>
+    </app-base>
+  </div>
+</div>
+
+
+<h2 class="text-center mt-5">
+  <span class="rounded-pill rounded-bottom-0 text-white px-5 py-2" style="font-size: 16px; background-color:gray; font-weight: bold ;">
       Atividades
   </span>
 </h2>
@@ -142,7 +164,7 @@
       </button>
     </div>
     
-
+    <!--
     <div *ngIf='!formValido()' class="caixa-15r d-flex justify-content-center" >
       <button type="button" class="btn btn-secondary" disabled >
         Salvar 
@@ -154,6 +176,7 @@
         Salvar
       </button>
     </div>
- 
+    -->
+    
   </div>
 </div>

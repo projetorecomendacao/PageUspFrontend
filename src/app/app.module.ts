@@ -17,8 +17,6 @@ import { DAOService } from './shared/services/dao.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
-
-
 const config = new AuthServiceConfig([
   {
     id: GoogleLoginProvider.PROVIDER_ID,
@@ -29,6 +27,8 @@ const config = new AuthServiceConfig([
 export function provideConfig() {
   return config;
 }
+
+
 
 @NgModule({
   declarations: [
@@ -45,7 +45,7 @@ export function provideConfig() {
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatTabsModule,
-    NgbModule
+    NgbModule,
   ],
   providers: [
     AuthGuard,

@@ -5,8 +5,8 @@ import { Component, OnInit, Input } from '@angular/core';
   templateUrl: './status.component.html'
 })
 export class StatusComponent implements OnInit {
-  @ Input() branco : boolean;
   @ Input() valido : boolean;
+  @ Input() branco : boolean;
   @ Input() errado : boolean;
 
   constructor() { }

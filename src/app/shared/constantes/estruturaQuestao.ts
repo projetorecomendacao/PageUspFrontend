@@ -283,9 +283,9 @@ export class EstruturaQuestao {
         this.campo_[24]='q24_to_shop';
         this.campo_[25]='q25_use_transport';
         this.campo_[26]='q26_to_cook';
-        this.campo_[27]='q27_UseTelephone';
+        this.campo_[27]='q27_useTelephone';
         this.campo_[28]='q28_dress_up';
-        this.campo_[29]='q29_TakeShower';
+        this.campo_[29]='q29_takeShower';
 
         this.campo_[30]='d30_difficulty_chewing';
         this.campo_[31]='d31_less3_meal_daily';

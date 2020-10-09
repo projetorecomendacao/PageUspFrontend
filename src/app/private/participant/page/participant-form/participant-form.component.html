@@ -35,6 +35,27 @@
           </div>  
         </app-base>
 
+        <!-- Nome Social-->
+        <app-base>
+          <div class="caixa-100">
+            <div class="caixa-15 d-flex align-items-center">
+              <b>1. </b>Nome Social:           
+            </div>
+            <div class="caixa-80">
+              <div class="caixa-100">
+                <input class="w-100 fu-not" type="text" [value]="participant.p01_name_social" disabled > 
+              </div>
+            </div>
+            <div class="caixa-5"></div>
+          </div>
+          <div class="caixa-100">
+            <div class="caixa-15"> </div>
+            <div class="caixa-85">
+              <i>*Este campo só pode ser alterado no cadastro de participantes</i>
+            </div>
+          </div>  
+        </app-base>
+
         <!--Endereço-->
         <app-base>
           <div class="caixa-15 d-flex align-items-center">
@@ -311,10 +332,10 @@
             Auto relato de saúde:
           </div>
           <div class="caixa-85">
-            <textarea class="w-100 form-control fu" formControlName="p16_health_monitoring" ></textarea>
+            <textarea class="w-100 form-control fu" formControlName="p16_health_self_report" ></textarea>
           </div>
           <div class="caixa-5">
-            <img [src]="mudou('p16_health_monitoring')" width="15px" height="15px">
+            <img [src]="mudou('p16_health_self_report')" width="15px" height="15px">
           </div>          
         </app-base>
         <!-- peso e altura originalmente estava na questão 32 -->
@@ -440,7 +461,7 @@
   </div>
 </div>
 
-<app-botoes [valido]="formValido()"></app-botoes>
+<app-botoes [valido]="formValido()" [pageForm]="pageForm"></app-botoes>
 
 <app-instrucoes></app-instrucoes>
 

@@ -5,7 +5,7 @@
 <!--Content-->
 <div class="w-xl-75 w-lg-75 mx-auto border bg-white shadow-lg" [formGroup]="pageForm">
   <!--Perguntas-->
-  <div class="form-group p-3" formGroupName="biologicalAspectsForm">
+  <div class="form-group p-3" [formGroupName]="dimensao">
     <div class="form-group p-3" formGroupName="commentsForm">
       <app-base>
         <div class="col-12 col-md-12 d-flex justify-content-center align-items-center">

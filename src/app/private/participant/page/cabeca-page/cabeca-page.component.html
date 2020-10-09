@@ -18,6 +18,15 @@
       <span class="col-12 col-md-11">
         <app-base>
           <div class="caixa-100">
+            <div class="caixa-30 lg"> Hora de início (HH:MM:SS): </div>
+            <div class="caixa-15">              
+              <input autocomplete="off" class="w-100 form-control fu" id="service" type="text" formControlName="start_time" mask="Hh:m0:s0" #hora_inicio>  
+            </div>
+            <div class="caixa-5">
+              <img [src]="mudou('start_time')" width="15px" height="15px">
+            </div>
+          </div>
+          <div class="caixa-100">
             <div class="caixa-20 lg">
               Serviço/Instituição:
             </div>
@@ -92,7 +101,7 @@
   </div>
 
   <div *ngIf='formValido()' class="caixa-15r d-flex justify-content-center" >
-    <button type="button" class="btn btn-success" name="bc2" matStepperNext >
+    <button type="button" class="btn btn-success" name="bc2" (click)="submit()" matStepperNext >
       Próximo>> 
     </button>
   </div>

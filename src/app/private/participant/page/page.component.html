@@ -3,43 +3,43 @@
     <mat-horizontal-stepper #stepper linear>
 
       <mat-step formGroupName="cabecaPageForm" 
-        [stepControl]="pageForm.get('cabecaPageForm')" [optional]="pageForm.valid">
+        [stepControl]="pageForm.get('cabecaPageForm')" [optional]="valido()">
         <ng-template matStepLabel>Cabeçalho</ng-template>
         <app-cabeca-page [pageForm]="pageForm"></app-cabeca-page>
       </mat-step>
 
       <mat-step formGroupName="participantFormForm" 
-        [stepControl]="pageForm.get('participantFormForm')" [optional]="pageForm.valid">
+        [stepControl]="pageForm.get('participantFormForm')" [optional]="valido()">
         <ng-template matStepLabel>Dados Pessoais</ng-template>
         <app-participant-form [pageForm]="pageForm"></app-participant-form>
       </mat-step>
 
       <mat-step formGroupName="psychologicalAspectsForm"
-        [stepControl]="pageForm.get('psychologicalAspectsForm')" [optional]="pageForm.valid">
+        [stepControl]="pageForm.get('psychologicalAspectsForm')" [optional]="valido()">
         <ng-template matStepLabel>Aspectos Psicológicos</ng-template>
         <app-psychological-aspects  [pageForm]="pageForm"></app-psychological-aspects>
       </mat-step>
 
       <mat-step formGroupName="biologicalAspectsForm"
-        [stepControl]="pageForm.get('biologicalAspectsForm')" [optional]="pageForm.valid">
+        [stepControl]="pageForm.get('biologicalAspectsForm')" [optional]="valido()">
         <ng-template matStepLabel>Aspectos Biológicos</ng-template>
         <app-biological-aspects  [pageForm]="pageForm"> </app-biological-aspects>
       </mat-step>
 
       <mat-step formGroupName="socialAspectsForm" 
-        [stepControl]="pageForm.get('socialAspectsForm')" [optional]="pageForm.valid">
+        [stepControl]="pageForm.get('socialAspectsForm')" [optional]="valido()">
         <ng-template matStepLabel>Aspectos Sociais</ng-template>
         <app-social-aspects [pageForm]="pageForm"></app-social-aspects>
       </mat-step>
 
       <mat-step formGroupName="multidimensionalAspectsForm"
-        [stepControl]="pageForm.get('multidimensionalAspectsForm')" [optional]="pageForm.valid">
+        [stepControl]="pageForm.get('multidimensionalAspectsForm')" [optional]="valido()">
         <ng-template matStepLabel>Aspectos Multidimensionais</ng-template>
         <app-multidimensional-aspect  [pageForm]="pageForm" [participant]="participant"></app-multidimensional-aspect>
       </mat-step>
  
-      <mat-step formGroupName="finalAnaliseForm"
-        [stepControl]="pageForm.get('finalAnaliseForm')" [optional]="pageForm.valid">
+      <mat-step formGroupName="demandMapForm"
+        [stepControl]="pageForm.get('demandMapForm')" [optional]="valido()">
         <ng-template matStepLabel>Análise Final</ng-template>
         <app-final-analise  [pageForm]="pageForm"></app-final-analise>
       </mat-step>

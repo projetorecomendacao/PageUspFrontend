@@ -9,7 +9,11 @@
       </div>
     </div>
   </app-questoes>
-  <app-questoes [pageForm]="pageForm" numeroQuestao='89' [posicaoDominio]="posicaoDominio"></app-questoes>
+  <app-questoes [pageForm]="pageForm" numeroQuestao='89' [posicaoDominio]="posicaoDominio">
+    <div class="caixa-100">
+      <app-ler-textarea [pageForm]="pageForm" campo='q89_fractures_due_to_falls_list' [posicaoDominio]="posicaoDominio"></app-ler-textarea>
+    </div>
+  </app-questoes>
   <app-base>
     <div class="caixa-100">
       <b class="azul">90. </b> O que o (a) senhor(a) estava fazendo quando sofreu essa(s) queda(s)? 
@@ -22,10 +26,10 @@
   <app-questoes [pageForm]="pageForm" numeroQuestao='91' [posicaoDominio]="posicaoDominio"></app-questoes>
   <app-questoes [pageForm]="pageForm" numeroQuestao='92' [posicaoDominio]="posicaoDominio"></app-questoes>
   <app-questoes [pageForm]="pageForm" numeroQuestao='93' [posicaoDominio]="posicaoDominio"></app-questoes>
-  <div class="caixa-100 centro2">
+  <div class="caixa-100 centro-multi">
     Baseado nas respostas de itens anteriores, identifique se o idoso apresenta/utiliza:
   </div> 
-  <div class="caixa-100 azulceu">
+  <div class="caixa-100 darksalmon"> 
     <app-questoes [pageForm]="pageForm" numeroQuestao='94' [posicaoDominio]="posicaoDominio"></app-questoes>
     <app-questoes [pageForm]="pageForm" numeroQuestao='95' [posicaoDominio]="posicaoDominio"></app-questoes>
     <app-questoes [pageForm]="pageForm" numeroQuestao='96' [posicaoDominio]="posicaoDominio"></app-questoes>

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ChecaCampo } from 'src/app/shared/services/checa-campo';
+import { PageService } from 'src/app/shared/services/page.service';
 import { PageForm } from '../../../../shared/forms/page.form';
 
 @Component({
@@ -31,15 +32,13 @@ export class CabecaPageComponent implements OnInit {
   }
 
   //O service checaCampo serve para verificar o status do campo e do formulário
-  constructor(private checaCampo: ChecaCampo){}
+  constructor(private checaCampo: ChecaCampo, private pageService : PageService){}
 
   ngOnInit() { }
 
+
   submit() { 
-    //for (var caca in this.pageForm.get('cabecaPageForm').value){
-    //  console.log(caca);
-    //  this.pageForm.get('cabecaPageForm').get(caca).markAsTouched;
-    //  this.pageForm.get('cabecaPageForm').get(caca).updateValueAndValidity;
-    //}
+    this.pageService.submit(this.pageForm);
   }
+
 }

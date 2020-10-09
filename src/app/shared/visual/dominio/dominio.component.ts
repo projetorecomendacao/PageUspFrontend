@@ -53,7 +53,7 @@ export class DominioComponent implements OnInit {
   conta_certo():number{
     this.score = 0;
       for (let i= this.questaoInicio;  i <= this.questaoFim; i++){
-        console.log(`inicio: ${this.questaoInicio}  fim: ${this.questaoFim}   i : ${i}  Valor:  ${this.checaCampo.campo(i)}`)
+        //console.log(`inicio: ${this.questaoInicio}  fim: ${this.questaoFim}   i : ${i}  Valor:  ${this.checaCampo.campo(i)}`)
         if (this.checaCampo.campo(i) != "0") {
           let _campo = this.pageForm.get(this.dimensao).get(this.dominio).get(this.checaCampo.campo(i)).value;
           let _sim = this.checaCampo.sim(i);
@@ -80,6 +80,7 @@ export class DominioComponent implements OnInit {
     this.questaoFim = this.checaCampo.getQuestaoFim(this.posicaoDominio);
     this.corTitulo = this.checaCampo.getCorTitulo(this.posicaoDominio);
     this.corLateral = this.checaCampo.getCorLateral(this.posicaoDominio);
+    console.log(this.corLateral)
   }
   
   // método que verifica se o form está válido
