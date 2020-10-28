@@ -1,0 +1,34 @@
+<main class="container-flex">
+  <!--Adicionar Duplas-->
+  <div class="d-flex justify-content-center mt-5">
+    <button class="btn btn-primary" type="button" (click)="addParticipant(-1)">Adicionar nova dupla</button>
+  </div>
+  <!--Title-->
+  <h2 class="text-center mt-5"><span class="bg-primary rounded-pill rounded-bottom-0 text-white px-5 py-2" *ngIf="participants.length">Duplas Cadastradas: {{participants.length}}</span></h2>
+  <h5 class="text-center text-primary mt-5" *ngIf="!participants.length">Nenhuma Dupla adicionada</h5>
+  <!--------->
+  <!--Users-->
+  <div *ngIf="participants.length" class="d-flex flex-wrap w-xl-50 w-lg-75 mx-auto mb-5">
+    <!--User1-->
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col" width="30%">Aluno reponsável</th>
+            <th scope="col" width="30%">Dupla</th>
+            <th scope="col" width="20%">Alterar</th>
+            <th scope="col" width="20%">Pages</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let participant of participants">
+              <td valign="center">{{participant.orientando_name}}</td>
+              <td valign="center">{{participant.dupla_name}}</td>
+              <td><button class="btn btn-success" (click)="addParticipant(participant.id)">Alterar</button></td>
+              <td><button class="btn btn-primary" (click)="goPages(participant.id)">Pages</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+  </div>
+    <!--------->
+</main>

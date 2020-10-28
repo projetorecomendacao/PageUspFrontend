@@ -1,0 +1,48 @@
+<div class="w-xl-75 w-lg-75 mx-auto border bg-white shadow-lg" [formGroup]="addOrientadorForm">
+    <app-base>
+      <div style="width: 100%; text-align: center; margin-bottom: 30px; font-size: 40px; font-weight: bold; color: DodgerBlue;" >
+        Dados da dupla
+      </div>
+
+      <!--Email-->
+      <div class="caixa-100" >
+        <app-input errorMessage='E-mail inválido' label='E-mail aluno responsável'>
+          <input class="w-100 form-control fu" type="email" id="email" formControlName="orientando_email" [ngClass]="{ 'is-invalid': submitted && !f.orientando_email }" [ngClass]="{ 'is-valid': f.orientando_email }">
+        </app-input>
+      </div>
+  
+      <!--------->
+      <!--Name-->
+      <div style="width: 100%;" >
+        <app-input errorMessage='Nome inválido' label='Nome aluno responsável'>
+          <input class="w-100 form-control fu" type="text" id="nome" formControlName="orientando_name" [ngClass]="{ 'is-invalid': submitted && !f.orientando_name.valid }" [ngClass]="{ 'is-valid': f.orientando_name.valid }">
+        </app-input>
+      </div>
+
+      <!--Email da dupla-->
+      <div class="caixa-100" >
+        <app-input errorMessage='E-mail inválido' label='E-mail aluno dupla'>
+          <input class="w-100 form-control fu" type="email" id="emailDupla" formControlName="dupla_email" [ngClass]="{ 'is-invalid': submitted && !f.dupla_email.valid }" [ngClass]="{ 'is-valid': f.dupla_email }">
+        </app-input>
+      </div>
+  
+      <!--------->
+      <!--Name da dupla-->
+      <div style="width: 100%;" >
+        <app-input errorMessage='Nome inválido' label='Nome aluno dupla'>
+          <input class="w-100 form-control fu" type="text" id="nomeDupla" formControlName="dupla_name" [ngClass]="{ 'is-invalid': submitted && !f.dupla_name.valid }" [ngClass]="{ 'is-valid': f.dupla_name.valid }">
+        </app-input>
+      </div>
+    
+
+      <div class="caixa-100">
+        <div class="caixa-20 d-flex align-items-start">
+          <button class="btn btn-danger" (click)="cancela()" type="button">Cancelar</button>
+        </div>
+        <div class="caixa-60"></div>
+        <div class="caixa-20" style="text-align: right;">      
+          <button class="btn btn-success" (click)="addParticipant()">Salvar</button>
+        </div>
+      </div>
+    </app-base>
+  </div>
