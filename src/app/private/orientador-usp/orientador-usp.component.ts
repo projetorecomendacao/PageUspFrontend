@@ -31,4 +31,8 @@ export class OrientadorUspComponent implements OnInit {
   goPages(id : number){
     alert('Ainda não implementado... Em Construção')
   }
+
+  voltar(){
+    this.router.navigate(['private']).then();
+  }
 }
