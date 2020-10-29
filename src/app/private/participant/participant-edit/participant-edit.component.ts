@@ -1,39 +1,42 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Participant } from 'src/app/shared/models/participant.model';
 import { REST_URL_PARTICIPANTS } from 'src/app/shared/constantes/REST_API_URLs';
 import { DAOService } from 'src/app/shared/services/dao.service';
+import { ParticipantForm } from 'src/app/shared/forms/participant.form';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-participant-edit',
   templateUrl: './participant-edit.component.html'
 })
 export class ParticipantEditComponent implements OnInit {
-  @Output() volta = new EventEmitter();
-
   branco = false;
   errado = false;
 
   submitted = false;
+  id : number;
 
-  public addParticipantForm: FormGroup = this.form.group({
-    p00_email: ['', Validators.required],
-    p01_name: ['', Validators.required],
-    p01_name_social: [''],
-    p02_address: ['', Validators.required],
-    p03_communication: ['', Validators.required],
-    p04_birth_date: ['', Validators.required],
-    p05_age: ['', [Validators.required,Validators.max(120),Validators.min(18)]],
-    p06_gender: ['', Validators.required],
-    p20_profile_photo_URL: [null]
-  });
+  public addParticipantForm: FormGroup; 
 
   // convenience getter for easy access to form fields
   get f() { return this.addParticipantForm.controls; }
 
-  constructor(private dao : DAOService, private form: FormBuilder) { }
+  constructor(private dao : DAOService, private form: FormBuilder, private partipantForm : ParticipantForm, 
+    private activateRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
+    this.id = this.activateRoute.snapshot.params['id'];
+    if (this.id == -1){
+      this.addParticipantForm = this.partipantForm.geraFormGroup();
+    } else {
+      this.dao.getObject(REST_URL_PARTICIPANTS,this.id.toString()).subscribe((data : Participant) => {
+        this.addParticipantForm = this.partipantForm.geraFormGroup(data);
+      },error => {
+        alert('Não foi encontrado o participante para ser alterado..');
+        this.router.navigate(['private']); 
+      })
+    }
   }
 
   addParticipant() {
@@ -42,10 +45,19 @@ export class ParticipantEditComponent implements OnInit {
       alert ('O formulário possui campos com erro !!!')
       return;
     }
-    this.dao.postObject(REST_URL_PARTICIPANTS, this.addParticipantForm.getRawValue()).subscribe((data: any) => {
-      this.volta.emit(data);
-    });
-    this.addParticipantForm.reset();
+    if (this.id == -1) {
+      this.dao.postObject(REST_URL_PARTICIPANTS, this.addParticipantForm.getRawValue()).subscribe((data: any) => {
+        this.router.navigate(['private']);
+      }, error => {
+        alert('Não foi possível gravar os dados do participante'); 
+      }); 
+    } else {
+      this.dao.putObject(REST_URL_PARTICIPANTS, this.addParticipantForm.getRawValue(), this.id.toString()).subscribe((data: any) => {
+        this.router.navigate(['private']);
+      }, error => {
+        alert('Não foi possível gravar os dados do participante'); 
+      }); 
+    }
   }
 
   

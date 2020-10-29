@@ -6,6 +6,7 @@ export class EstruturaPage {
 
     public dominioEstrutura: EstruturaDominio[];
      
+    //Para as cores é necessário criar uma classe no styles.css
     constructor(){
         this.dominioEstrutura = new Array(12);
         this.dominioEstrutura[POSI_cognitiveDeficit] = {'dimensao':'psychologicalAspectsForm','dominio':'cognitiveDeficitForm','nomeDominio':'Déficit Cognitivo','max_score':6,'campoScore':'score','campoInvestigar' : 'need_investigation','questaoInicio':1,'questaoFim': 6,'campoComentario' : 'comments', 'corTitulo': 'bg-primary', 'corLateral' : 'azulceu'};
@@ -19,7 +20,7 @@ export class EstruturaPage {
         this.dominioEstrutura[POSI_lowSocialSupport] = {'dimensao':'socialAspectsForm','dominio':'lowSocialSupportForm','nomeDominio':'Baixo Suporte Social','max_score':8,'campoScore':'score','campoInvestigar' : 'need_investigation','questaoInicio':56,'questaoFim': 63,'campoComentario' : 'comments', 'corTitulo': 'bg-warning', 'corLateral' : 'khaki'};
         this.dominioEstrutura[POSI_violence] = {'dimensao':'socialAspectsForm','dominio':'violenceForm','nomeDominio':'Violência','max_score':8,'campoScore':'score','campoInvestigar' : 'need_investigation','questaoInicio':64,'questaoFim': 71,'campoComentario' : 'comments', 'corTitulo': 'bg-warning', 'corLateral' : 'khaki'};
         this.dominioEstrutura[POSI_environmentalProblems] = {'dimensao':'socialAspectsForm','dominio':'environmentalProblemsForm','nomeDominio':'Problemas Ambientais','max_score':16,'campoScore':'score','campoInvestigar' : 'need_investigation','questaoInicio':72,'questaoFim': 87,'campoComentario' : 'comments', 'corTitulo': 'bg-warning', 'corLateral' : 'khaki'};
-        this.dominioEstrutura[POSI_falls] = {'dimensao':'multidimensionalAspectsForm','dominio':'fallsForm','nomeDominio':'Quedas','max_score':16,'campoScore':'score','campoInvestigar' : 'need_investigation','questaoInicio':88,'questaoFim': 104,'campoComentario' : 'comments', 'corTitulo': 'bg-danger', 'corLateral' : 'coral'};
+        this.dominioEstrutura[POSI_falls] = {'dimensao':'multidimensionalAspectsForm','dominio':'fallsForm','nomeDominio':'Quedas','max_score':16,'campoScore':'score','campoInvestigar' : 'need_investigation','questaoInicio':88,'questaoFim': 104,'campoComentario' : 'comments', 'corTitulo': 'bg-danger', 'corLateral' : 'darksalmon'};
             
     }
 

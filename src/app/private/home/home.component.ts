@@ -15,18 +15,13 @@ export class HomeComponent implements OnInit {
   public participants: Participant[] = new Array<Participant>();
 
   constructor(private dao: DAOService, private pageService: PageService, private router: Router, private checaCampo: ChecaCampo) {
-    dao.getObjects(REST_URL_PARTICIPANTS).subscribe((data: Participant[]) => {
-      for (const participant of data)
-        this.participants.push(participant);
-    });
-  }
-
-  //Método que recebe o event emiter do componente de cadastro
-  recebeParticipant(_part){
-    this.participants.push(_part);
   }
 
   ngOnInit() {
+    this.dao.getObjects(REST_URL_PARTICIPANTS).subscribe((data: Participant[]) => {
+      for (const participant of data)
+        this.participants.push(participant);
+    });
   }
 
   goToParticipant(id: number) {
@@ -39,6 +34,14 @@ export class HomeComponent implements OnInit {
     console.log(this.p);
     this.pageService.participant = this.p;
     this.router.navigate(['private/participant']).then();
+  }
+
+  goToOrientandos(){
+    this.router.navigate(['private/orientador']).then();
+  }
+
+  addParticipant(id : number){
+    this.router.navigate(['private/participantEdit',id]).then();
   }
 
 }

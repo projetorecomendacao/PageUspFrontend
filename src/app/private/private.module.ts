@@ -102,7 +102,11 @@ import { CommentsDimensaoComponent } from '../shared/visual/comments-dimensao/co
 import { RecomendacaoComponent } from './participant/page/final-analise/recomendacao/recomendacao.component';
 import { AtividadesRecomendadasComponent } from './participant/page/final-analise/recomendacao/atividades-recomendadas/atividades-recomendadas.component';
 import { AtividadesRec } from '../shared/services/atividades-service';
-import { NgxMaskModule, IConfig } from 'ngx-mask'
+import { NgxMaskModule, IConfig } from 'ngx-mask';
+import { OrientadorUspComponent } from './orientador-usp/orientador-usp.component'
+import { ParticipantForm } from '../shared/forms/participant.form';
+import { OrientadorEditComponent } from './orientador-usp/orientador-edit/orientador-edit.component';
+import { OrientadorForm } from '../shared/forms/orientador.form';
 
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
@@ -164,7 +168,9 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
     DoencaOutroComponent,
     CommentsDimensaoComponent,
     AtividadesRecomendadasComponent,
-    RecomendacaoComponent
+    RecomendacaoComponent,
+    OrientadorUspComponent,
+    OrientadorEditComponent
   ],
   imports: [
     CommonModule,
@@ -210,7 +216,9 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
     EstruturaPage,
     EstruturaQuestao,
     AtividadesRec,
-    DemandMapForm
+    DemandMapForm,
+    ParticipantForm,
+    OrientadorForm
   ]
 })
 export class PrivateModule { }

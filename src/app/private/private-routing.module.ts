@@ -5,6 +5,9 @@ import { ParticipantComponent } from './participant/participant.component';
 import { PrivateComponent } from './private.component';
 import {PagesListComponent} from './participant/pages-list/pages-list.component';
 import {PageComponent} from './participant/page/page.component';
+import { OrientadorUspComponent } from './orientador-usp/orientador-usp.component';
+import { ParticipantEditComponent } from './participant/participant-edit/participant-edit.component';
+import { OrientadorEditComponent } from './orientador-usp/orientador-edit/orientador-edit.component';
 
 
 
@@ -19,9 +22,12 @@ const routes: Routes = [
         component: ParticipantComponent,
         children: [
           { path: '', component: PagesListComponent },
-          { path: 'page',component: PageComponent}
+          { path: 'page',component: PageComponent},
         ]
-      }
+      },
+      { path: 'orientador', component : OrientadorUspComponent},
+      { path: 'participantEdit/:id', component : ParticipantEditComponent},
+      { path: 'orientadorEdit/:id', component : OrientadorEditComponent}
     ]
   },
 ];

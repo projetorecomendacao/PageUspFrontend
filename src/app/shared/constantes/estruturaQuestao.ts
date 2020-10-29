@@ -94,7 +94,7 @@ export class EstruturaQuestao {
         this.questoes[70]='Alguém do seu convívio já tocou o corpo do(a) senhor(a) sem o seu consentimento?';
         this.questoes[71]='O(a) senhor(a) está deixando de cuidar de si próprio?';
         
-        this.questoes[72]='[Ambiente Interno] - Na casa do(a) Senhor(a): Os móveis próximos às áreas de circulação são estáveis (firmes)?';
+        this.questoes[72]=' Os móveis próximos às áreas de circulação são estáveis (firmes)?';
         this.questoes[73]='Há objetos (chinelos, brinquedos, tapetes, etc) soltos nas áreas de circulação?';
         this.questoes[74]='O piso é escorregadio (ex. encerado, molhado)?';
         this.questoes[75]='Há tapetes antiderrapantes (fora e dentro do box)?';
@@ -141,10 +141,10 @@ export class EstruturaQuestao {
         this.sim_[6]='1';
 
         this.sim_[7]='0';
-        this.sim_[8]='0';
+        this.sim_[8]='1';
         this.sim_[9]='0';
         this.sim_[10]='0';
-        this.sim_[11]='0';
+        this.sim_[11]='1';
         this.sim_[12]='0';
         this.sim_[13]='0';
         this.sim_[14]='0';

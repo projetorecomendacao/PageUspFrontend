@@ -1,82 +1,85 @@
-<form autocomplete="off" class="d-flex flex-wrap w-100 mx-auto bg-white" [formGroup]="addParticipantForm">
-  <div style="width: 100%; text-align: center; margin-bottom: 30px; font-size: 40px; font-weight: bold; color: DodgerBlue;" >
-    Dados do novo participante
-  </div>
-  <!--Email-->
-  <div class="caixa-100" >
-    <app-input errorMessage='E-mail inválido' label='E-mail'>
-      <input class="w-100 form-control fu" type="text" id="email" formControlName="p00_email" [ngClass]="{ 'is-invalid': submitted && !f.p00_email.valid }" [ngClass]="{ 'is-valid': f.p00_email.valid }">
-    </app-input>
-  </div>
-
-  <!--------->
-  <!--Name-->
-  <div style="width: 100%;" >
-    <app-input errorMessage='Nome inválido' label='Nome'>
-      <input class="w-100 form-control fu" type="text" id="nome" formControlName="p01_name" [ngClass]="{ 'is-invalid': submitted && !f.p01_name.valid }" [ngClass]="{ 'is-valid': f.p01_name.valid }">
-    </app-input>
-  </div>
-  <!-- Social -->
-  <div style="width: 100%;" >
-    <app-input errorMessage='Nome inválido' label='Nome'>
-      <input class="w-100 form-control fu" type="text" id="nome" formControlName="p01_name_social" [ngClass]="{ 'is-invalid': submitted && !f.p01_name_social.valid }" [ngClass]="{ 'is-valid': f.p01_name_social.valid }">
-    </app-input>
-  </div>
-  <!-------->
-  <!--Address-->
-  <div style="width: 100%;" >
-    <app-input errorMessage='Endereço inválido' label='Endereço'>
-      <input class="w-100 form-control fu" type="text" id="endereco" formControlName="p02_address" [ngClass]="{ 'is-invalid': submitted && !f.p02_address.valid }" [ngClass]="{ 'is-valid': f.p02_address.valid }">
-    </app-input>
-  </div>
-  <!----------->
-  <!--Communication-->
-  <div style="width: 100%;" >
-    <app-input errorMessage='Meios de comunicação inválido' label='Comunicação'>
-      <input class="w-100 form-control fu" type="text" id="comunicacao" formControlName="p03_communication" [ngClass]="{ 'is-invalid': submitted && !f.p03_communication.valid }" [ngClass]="{ 'is-valid': f.p03_communication.valid }">
-    </app-input>
-  </div>
-
-  <!--Birth Date-->
-  <div style="width: 50%;" >
-    <app-input errorMessage='O participante deve ter entre 18 e 120 anos' label='Data de nascimento'>
-      <input class="w-100 form-control fu" (change)="calculaIdade()"  type="date" id="birth_date" formControlName="p04_birth_date" [ngClass]="{ 'is-invalid': submitted && !f.p04_birth_date.valid }" [ngClass]="{ 'is-valid': f.p04_birth_date.valid }">
-    </app-input>
-  </div>
-  <div style="width: 10%;" ></div>
-  <div style="width: 40%;" >
-    <app-input errorMessage='' label='Idade em anos'>
-      <input disabled class="w-100 form-control fu-not" type="number" id="age" formControlName="p05_age" [ngClass]="{ 'is-valid': f.p05_age.valid }">
-    </app-input>
-    <div *ngIf="checaIdade()" style="width: 100%; color: red">A idade tem que estar entre 18 e 120 anos</div>
-  </div>
-
-
-  <!--Gender-->
-  <div style="width: 50%;" >
-    <app-input errorMessage='É preciso informar o gênero' label='Gênero'>
-      <select class="w-100 form-control fu"  id="gender" formControlName="p06_gender" [ngClass]="{ 'is-invalid': submitted && !f.p06_gender.valid }" [ngClass]="{ 'is-valid': f.p06_gender.valid }">
-        <option value="O">Outros</option>
-        <option value="M">Masculino</option>
-        <option value="F">Feminino</option>
-      </select>
-    </app-input>
-  </div>
-
-  <!---------->
-  <!--Image
-  <div class="d-flex flex-column my-2">
-    <label class="mb-0" for="profile_photo_URL">Imagem de perfil:</label>
-    <input type="file" id="profile_photo_URL" accept="image/*" formControlName="p20_profile_photo_URL">
-  </div>
-    ------->
-  <div class="caixa-100">
-    <div class="caixa-20 d-flex align-items-start">
-      <button class="btn btn-danger" (click)="limpa()" type="button" data-toggle="collapse" data-target="#addParticipant">Fechar</button>
+<div class="w-xl-75 w-lg-75 mx-auto border bg-white shadow-lg" [formGroup]="addParticipantForm">
+  <app-base>
+    <div style="width: 100%; text-align: center; margin-bottom: 30px; font-size: 40px; font-weight: bold; color: DodgerBlue;" >
+      Dados do participante
     </div>
-    <div class="caixa-60"></div>
-    <div class="caixa-20" style="text-align: right;">      
-      <button class="btn btn-success" (click)="addParticipant()">Salvar</button>
+    <!--Email-->
+    <div class="caixa-100" >
+      <app-input errorMessage='E-mail inválido' label='E-mail'>
+        <input class="w-100 form-control fu" type="text" id="email" formControlName="p00_email" [ngClass]="{ 'is-invalid': submitted && !f.p00_email.valid }" [ngClass]="{ 'is-valid': f.p00_email.valid }">
+      </app-input>
     </div>
-  </div>
-</form>
+
+    <!--------->
+    <!--Name-->
+    <div style="width: 100%;" >
+      <app-input errorMessage='Nome inválido' label='Nome'>
+        <input class="w-100 form-control fu" type="text" id="nome" formControlName="p01_name" [ngClass]="{ 'is-invalid': submitted && !f.p01_name.valid }" [ngClass]="{ 'is-valid': f.p01_name.valid }">
+      </app-input>
+    </div>
+
+    <!-- Social -->
+    <div style="width: 100%;" >
+      <app-input errorMessage='Nome inválido' label='Nome Social'>
+        <input class="w-100 form-control fu" type="text" id="nome" formControlName="p01_name_social" [ngClass]="{ 'is-invalid': submitted && !f.p01_name_social.valid }" [ngClass]="{ 'is-valid': f.p01_name_social.valid }">
+      </app-input>
+    </div>
+    <!-------->
+    <!--Address-->
+    <div style="width: 100%;" >
+      <app-input errorMessage='Endereço inválido' label='Endereço'>
+        <input class="w-100 form-control fu" type="text" id="endereco" formControlName="p02_address" [ngClass]="{ 'is-invalid': submitted && !f.p02_address.valid }" [ngClass]="{ 'is-valid': f.p02_address.valid }">
+      </app-input>
+    </div>
+    <!----------->
+    <!--Communication-->
+    <div style="width: 100%;" >
+      <app-input errorMessage='Meios de comunicação inválido' label='Comunicação'>
+        <input class="w-100 form-control fu" type="text" id="comunicacao" formControlName="p03_communication" [ngClass]="{ 'is-invalid': submitted && !f.p03_communication.valid }" [ngClass]="{ 'is-valid': f.p03_communication.valid }">
+      </app-input>
+    </div>
+
+    <!--Birth Date-->
+    <div style="width: 50%;" >
+      <app-input errorMessage='O participante deve ter entre 18 e 120 anos' label='Data de nascimento'>
+        <input class="w-100 form-control fu" (change)="calculaIdade()"  type="date" id="birth_date" formControlName="p04_birth_date" [ngClass]="{ 'is-invalid': submitted && !f.p04_birth_date.valid }" [ngClass]="{ 'is-valid': f.p04_birth_date.valid }">
+      </app-input>
+    </div>
+    <div style="width: 10%;" ></div>
+    <div style="width: 40%;" >
+      <app-input errorMessage='' label='Idade em anos'>
+        <input disabled class="w-100 form-control fu-not" type="number" id="age" formControlName="p05_age" [ngClass]="{ 'is-valid': f.p05_age.valid }">
+      </app-input>
+      <div *ngIf="checaIdade()" style="width: 100%; color: red">A idade tem que estar entre 18 e 120 anos</div>
+    </div>
+
+
+    <!--Gender-->
+    <div style="width: 50%;" >
+      <app-input errorMessage='É preciso informar o gênero' label='Gênero'>
+        <select class="w-100 form-control fu"  id="gender" formControlName="p06_gender" [ngClass]="{ 'is-invalid': submitted && !f.p06_gender.valid }" [ngClass]="{ 'is-valid': f.p06_gender.valid }">
+          <option value="O">Outros</option>
+          <option value="M">Masculino</option>
+          <option value="F">Feminino</option>
+        </select>
+      </app-input>
+    </div>
+
+    <!---------->
+    <!--Image
+    <div class="d-flex flex-column my-2">
+      <label class="mb-0" for="profile_photo_URL">Imagem de perfil:</label>
+      <input type="file" id="profile_photo_URL" accept="image/*" formControlName="p20_profile_photo_URL">
+    </div>
+      ------->
+    <div class="caixa-100">
+      <div class="caixa-20 d-flex align-items-start">
+        <button class="btn btn-danger" (click)="limpa()" type="button" data-toggle="collapse" data-target="#addParticipant">Fechar</button>
+      </div>
+      <div class="caixa-60"></div>
+      <div class="caixa-20" style="text-align: right;">      
+        <button class="btn btn-success" (click)="addParticipant()">Salvar</button>
+      </div>
+    </div>
+  </app-base>
+</div>

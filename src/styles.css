@@ -482,6 +482,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}
   background-color: MediumVioletRed;
 }
 
+.salmon{
+  background-color: plum;
+}
+
+.tomato {
+  background-color: tomato;
+}
+
 
 .lg{
   padding-top: 20px;
@@ -504,6 +512,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}
   border-top-color: lightgray ;
   border-top-style: solid;
   border-top-width: 1px;
+}
+
+.mtb2{
+  margin-bottom: 15px;
+  margin-top: 25px;
 }
 
 .centro {
@@ -538,6 +551,21 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}
 
 .centro-multi {
   background-color: violet;
+  text-align: center;
+  border-bottom-color: lightgray ;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-top-color: lightgray ;
+  border-top-style: solid;
+  border-top-width: 2px;
+  font-weight: bold;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  
+}
+
+.centro-multi-env {
+  background-color: wheat;
   text-align: center;
   border-bottom-color: lightgray ;
   border-bottom-style: solid;

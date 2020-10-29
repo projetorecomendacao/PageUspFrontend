@@ -38,3 +38,4 @@ export const REST_URL_MULTIDISCIPLINARY_DOMAIN = REST_URL + 'multidisciplinaryDo
 
 export const REST_URL_PAGE = REST_URL + 'pageUsp/';
 
+export const REST_URL_ORIENTADOR = REST_URL + 'orientador/';
