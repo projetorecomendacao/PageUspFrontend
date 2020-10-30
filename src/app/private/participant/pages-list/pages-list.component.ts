@@ -48,7 +48,6 @@ export class PagesListComponent implements OnInit {
       for (const page of response) {
         if (page.participant == this.pageService.participant.id){
           this.pages.push(page);
-          console.log(page);
         }
       }
     });
@@ -139,20 +138,20 @@ export class PagesListComponent implements OnInit {
         }
         //seta o page
         this.pageService.page = page_;
-        this.router.navigate(['private/participant/page/']).then();
+        this.router.navigate(['private/participant/page/']);
         
       },error => {
         alert('Page não encontrado..');  
-        this.router.navigate(['private/']).then();
+        this.router.navigate(['private/']);
       });
     } else {
       this.pageService.page.id = page;
-      this.router.navigate(['private/participant/page/']).then();
+      this.router.navigate(['private/participant/page/']);
     }
   }
 
   voltar(){
-    this.router.navigate(['private/']).then();  
+    this.router.navigate(['private/']);  
   }
 
   // TODO - If the user clicks twice on the delete button, it returns deletes and returns error. It is interesting to disable the button while waiting for the response

@@ -13,7 +13,7 @@ import { DAOService } from 'src/app/shared/services/dao.service';
   templateUrl: './page.component.html'
 })
 export class PageComponent implements OnInit {
-  isOptional : boolean;
+  isOptional : boolean = true;
 
   get page() { return this.pageService.page; }
 
@@ -25,7 +25,6 @@ export class PageComponent implements OnInit {
 
   ngOnInit(): void {
     this.participant = this.pageService.participant;
-    console.log(this.pageService.page.id)
     if (this.pageService.page.id == 0){
         this.pageForm = this.pf.geraFormGroup();
     } else {

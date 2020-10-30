@@ -16,4 +16,13 @@ export class EnvironmentalProblemsComponent implements OnInit {
 
   ngOnInit():void {}
 
+  q_76():boolean{
+    if (this.pageForm.get('socialAspectsForm').get('environmentalProblemsForm').get('q76_stairs').value == 'N') {
+      this.pageForm.get('socialAspectsForm').get('environmentalProblemsForm').get('q77_lighted_stairs').setValue('S');
+      this.pageForm.get('socialAspectsForm').get('environmentalProblemsForm').get('q78_handrail_on_stairs').setValue('S');
+      return true;
+    }
+    return false;
+  }
+
  }

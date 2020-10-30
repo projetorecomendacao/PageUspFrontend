@@ -18,11 +18,24 @@ export class MalnutritionComponent implements OnInit {
     {valor : "Não sabe Informar", descricao : "Não sabe Informar"}
   ]
 
+  //Indica a questão que não será editável
+  q_35 = true;
+
   // posição do domínio no vetor EstruturaPage
   posicaoDominio : number = POSI_malnutrition;
 
+
+
   constructor() {}
 
-  ngOnInit():void {}
+  ngOnInit():void {
+    //Seta o valor do campo do imc menor que 22 para desnutrição
+    if (this.pageForm.get('participantFormForm').get('p20_IMC').value <= 22){
+      this.pageForm.get('biologicalAspectsForm').get('malnutritionForm').get('q35_bmi_less22').setValue('S');
+    } else {
+      this.pageForm.get('biologicalAspectsForm').get('malnutritionForm').get('q35_bmi_less22').setValue('N');      
+    }
+  }  
+ 
 
 }

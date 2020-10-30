@@ -65,7 +65,8 @@ export class ChecaCampo {
     }
 
     nao (pos : number): string{
-        if (this.estruturaQuestao.getSim(pos) == '1') {
+        // Só retorna 1 se o sim for 0
+        if (this.estruturaQuestao.getSim(pos) != '0') {
             return '0';
         } 
         return '1';

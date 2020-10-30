@@ -10,16 +10,23 @@
                     <div class="caixa-100">
                         <ng-content></ng-content>
                     </div>
-                </span>
+                </span>  
                 <span class="col col-md-3">
-                    <div class="caixa-85">
-                    <select style="background-color: whitesmoke;" class="w-100 form-control" formControlName="{{campo}}">
-                        <option value="" selected disabled>Selecione</option>
-                        <option value="S">{{sim}}-Sim</option>
-                        <option value="N">{{nao}}-Não</option>
-                    </select>
+                    <div *ngIf='desabilitar()' class="caixa-85">
+                        <select style="background-color: gold"  class="w-100 form-control" disabled formControlName="{{campo}}">
+                            <option value="" selected disabled>Selecione</option>
+                            <option value="S">{{sim}}-Sim</option>
+                            <option value="N">{{nao}}-Não</option>
+                        </select>
                     </div>
-                    <div class="caixa-15">
+                    <div *ngIf='!desabilitar()' class="caixa-85">
+                        <select style="background-color: whitesmoke"  class="w-100 form-control" formControlName="{{campo}}">
+                            <option value="" selected disabled>Selecione</option>
+                            <option value="S">{{sim}}-Sim</option>
+                            <option value="N">{{nao}}-Não</option>
+                        </select>
+                    </div>
+                    <div *ngIf='!desabilitar()' class="caixa-15">
                         <img style="margin-left: 10px;" [src]="mudou('controlName')" width="15px" height="15px">
                     </div>
                 </span>

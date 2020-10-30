@@ -218,7 +218,7 @@ export class EstruturaQuestao {
         this.sim_[73]='0';
         this.sim_[74]='0';
         this.sim_[75]='1';
-        this.sim_[76]='1';
+        this.sim_[76]='-1'; // Esta questão não conta..
         this.sim_[77]='1';
         this.sim_[78]='1';
 

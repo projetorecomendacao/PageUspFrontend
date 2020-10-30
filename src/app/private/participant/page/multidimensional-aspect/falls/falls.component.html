@@ -29,17 +29,17 @@
   <div class="caixa-100 centro-multi">
     Baseado nas respostas de itens anteriores, identifique se o idoso apresenta/utiliza:
   </div> 
-  <div class="caixa-100 salmon"> 
-    <app-questoes [pageForm]="pageForm" numeroQuestao='94' [posicaoDominio]="posicaoDominio"></app-questoes>
-    <app-questoes [pageForm]="pageForm" numeroQuestao='95' [posicaoDominio]="posicaoDominio"></app-questoes>
+  <div *ngIf='enche()' class="caixa-100 salmon"> 
+    <app-questoes [pageForm]="pageForm" numeroQuestao='94' [posicaoDominio]="posicaoDominio" notEnabled='true'></app-questoes>
+    <app-questoes [pageForm]="pageForm" numeroQuestao='95' [posicaoDominio]="posicaoDominio" notEnabled='true'></app-questoes>
     <app-questoes [pageForm]="pageForm" numeroQuestao='96' [posicaoDominio]="posicaoDominio"></app-questoes>
-    <app-questoes [pageForm]="pageForm" numeroQuestao='97' [posicaoDominio]="posicaoDominio"></app-questoes> 
+    <app-questoes [pageForm]="pageForm" numeroQuestao='97' [posicaoDominio]="posicaoDominio" notEnabled='true'></app-questoes> 
 
-    <app-questoes [pageForm]="pageForm" numeroQuestao='98' [posicaoDominio]="posicaoDominio"></app-questoes>
+    <app-questoes [pageForm]="pageForm" numeroQuestao='98' [posicaoDominio]="posicaoDominio" notEnabled='true'></app-questoes>
     <app-questoes [pageForm]="pageForm" numeroQuestao='99' [posicaoDominio]="posicaoDominio"></app-questoes>
     <app-questoes [pageForm]="pageForm" numeroQuestao='100' [posicaoDominio]="posicaoDominio"></app-questoes>
-    <app-questoes [pageForm]="pageForm" numeroQuestao='101' [posicaoDominio]="posicaoDominio"></app-questoes>
-    <app-questoes [pageForm]="pageForm" numeroQuestao='102' [posicaoDominio]="posicaoDominio"></app-questoes>
+    <app-questoes [pageForm]="pageForm" numeroQuestao='101' [posicaoDominio]="posicaoDominio" notEnabled='true'></app-questoes>
+    <app-questoes [pageForm]="pageForm" numeroQuestao='102' [posicaoDominio]="posicaoDominio" notEnabled='true'></app-questoes>
     <app-questoes [pageForm]="pageForm" numeroQuestao='103' [posicaoDominio]="posicaoDominio"></app-questoes>
     <app-questoes [pageForm]="pageForm" numeroQuestao='104' [posicaoDominio]="posicaoDominio"></app-questoes>
   </div>

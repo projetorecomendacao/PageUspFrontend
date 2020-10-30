@@ -33,15 +33,15 @@ export class HomeComponent implements OnInit {
     }
     console.log(this.p);
     this.pageService.participant = this.p;
-    this.router.navigate(['private/participant']).then();
+    this.router.navigate(['private/participant']);
   }
 
   goToOrientandos(){
-    this.router.navigate(['private/orientador']).then();
+    this.router.navigate(['private/orientador']);
   }
 
   addParticipant(id : number){
-    this.router.navigate(['private/participantEdit',id]).then();
+    this.router.navigate(['private/participantEdit',id]);
   }
 
 }

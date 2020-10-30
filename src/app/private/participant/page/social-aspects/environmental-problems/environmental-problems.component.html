@@ -7,8 +7,14 @@
   <app-questoes [pageForm]="pageForm" numeroQuestao='74' [posicaoDominio]="posicaoDominio"></app-questoes>
   <app-questoes [pageForm]="pageForm" numeroQuestao='75' [posicaoDominio]="posicaoDominio"></app-questoes>
   <app-questoes [pageForm]="pageForm" numeroQuestao='76' [posicaoDominio]="posicaoDominio"></app-questoes>
-  <app-questoes [pageForm]="pageForm" numeroQuestao='77' [posicaoDominio]="posicaoDominio"></app-questoes>
-  <app-questoes [pageForm]="pageForm" numeroQuestao='78' [posicaoDominio]="posicaoDominio"></app-questoes>
+  <div *ngIf = 'q_76()'>
+    <app-questoes [pageForm]="pageForm" numeroQuestao='77' [posicaoDominio]="posicaoDominio" notEnabled='true'></app-questoes>
+    <app-questoes [pageForm]="pageForm" numeroQuestao='78' [posicaoDominio]="posicaoDominio" notEnabled='true'></app-questoes>
+  </div>
+  <div *ngIf = '!q_76()'>
+    <app-questoes [pageForm]="pageForm" numeroQuestao='77' [posicaoDominio]="posicaoDominio"></app-questoes>
+    <app-questoes [pageForm]="pageForm" numeroQuestao='78' [posicaoDominio]="posicaoDominio"></app-questoes>
+  </div>
 
   <div class="caixa-100 centro-multi-env">
     <b>[Comportamento de Risco] - O(a) Senhor(a) costuma: </b>

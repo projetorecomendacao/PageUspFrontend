@@ -43,6 +43,14 @@ export class ParticipantFormComponent implements OnInit {
     }
     let IMC = peso / (altura * altura);
     this.pageForm.get('participantFormForm').get('p20_IMC').setValue(IMC);
+    this.pageForm.get('biologicalAspectsForm').get('cardiovascularFactorsForm').get('q43_bmi_obesity').setValue('N');
+    this.pageForm.get('biologicalAspectsForm').get('malnutritionForm').get('q35_bmi_less22').setValue('N');
+    if (IMC <= 22){
+      this.pageForm.get('biologicalAspectsForm').get('malnutritionForm').get('q35_bmi_less22').setValue('S');
+    }
+    if (IMC >= 27){
+      this.pageForm.get('biologicalAspectsForm').get('cardiovascularFactorsForm').get('q43_bmi_obesity').setValue('S');
+    }
   }
 
   constructor(private checaCampo: ChecaCampo, private pageService : PageService){

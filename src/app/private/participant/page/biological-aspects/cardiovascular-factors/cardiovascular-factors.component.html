@@ -1,6 +1,7 @@
 <app-dominio [pageForm]="pageForm" [posicaoDominio]="posicaoDominio">
   <app-questoes [pageForm]="pageForm" numeroQuestao='36' [posicaoDominio]="posicaoDominio"></app-questoes>
   <app-questoes [pageForm]="pageForm" numeroQuestao='37' [posicaoDominio]="posicaoDominio">
+    <!--
     <div class="caixa-100 d-flex justify-content-center align-items-center">
       <div class="caixa-70">
         Desconhece os valores de PA?
@@ -9,8 +10,10 @@
         <app-ler-select [pageForm]="pageForm" campo='q37_hypertension_unknow' [posicaoDominio]="posicaoDominio" [opcoes]="opcoes"></app-ler-select>
       </div>
     </div>
+    -->
   </app-questoes>
   <app-questoes [pageForm]="pageForm" numeroQuestao='38' [posicaoDominio]="posicaoDominio">
+    <!--
     <div class="caixa-100 d-flex justify-content-center align-items-center">
       <div class="caixa-70">
         Desconhece os valores de glicemia?
@@ -19,8 +22,10 @@
         <app-ler-select [pageForm]="pageForm" campo='q38_uncontrolled_diabetes_unknow' [posicaoDominio]="posicaoDominio" [opcoes]="opcoes"></app-ler-select>
       </div>
     </div>
+    -->
   </app-questoes>
   <app-questoes [pageForm]="pageForm" numeroQuestao='39' [posicaoDominio]="posicaoDominio">
+    <!--
     <div class="caixa-100 d-flex justify-content-center align-items-center">
       <div class="caixa-70">
         Desconhece os valores de CT e HDL?
@@ -29,6 +34,7 @@
         <app-ler-select [pageForm]="pageForm" campo='q39_cholesterol_unknow' [posicaoDominio]="posicaoDominio" [opcoes]="opcoes"></app-ler-select>
       </div>
     </div>
+    -->
   </app-questoes>
   <app-questoes [pageForm]="pageForm" numeroQuestao='40' [posicaoDominio]="posicaoDominio"></app-questoes>
   <app-questoes [pageForm]="pageForm" numeroQuestao='41' [posicaoDominio]="posicaoDominio">
@@ -88,7 +94,7 @@
       </div>
     </div>
   </app-questoes>
-  <app-questoes [pageForm]="pageForm" numeroQuestao='43' [posicaoDominio]="posicaoDominio"></app-questoes> 
+  <app-questoes [pageForm]="pageForm" numeroQuestao='43' [posicaoDominio]="posicaoDominio" [notEnabled] = 'q_43'></app-questoes> 
 
   <app-comments [pageForm]='pageForm' [posicaoDominio]="posicaoDominio"></app-comments>
 </app-dominio>
