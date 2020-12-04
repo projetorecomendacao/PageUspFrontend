@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { REST_URL_PAGE } from '../constantes/REST_API_URLs';
 
 @Injectable()
 export class DAOService {
@@ -29,6 +30,10 @@ export class DAOService {
 
     deleteObject(urlObject: string, id: string) {
         return this.http.delete(`${urlObject}${id}/`);
+    }
+
+    getPageOrientador(id : string){
+        return this.http.post(REST_URL_PAGE + `${id}/get_page_orientador/`,'')
     }
 
 }

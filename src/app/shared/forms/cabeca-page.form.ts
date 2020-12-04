@@ -36,7 +36,7 @@ export class CabecaPageForm{
         interviewer: [this.userService.getName(),[Validators.required]],
         avaliation_date: ['',[Validators.required]],
         start_time: ['',[Validators.required]],
-        end_time: ['00',[Validators.required]],
+        end_time: ['00:00:00',[Validators.required]],
         //created_at: [,[Validators.required]],
         //updated_at: ['',[Validators.required]],
        });

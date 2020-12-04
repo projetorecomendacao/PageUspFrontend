@@ -30,7 +30,7 @@ export class PsychologicalAspectsForm{
         'cognitiveDeficitForm' : this.cognitiveDeficitForm.geraFormGroup(),
         'depressionForm' : this.depressionForm.geraFormGroup(),
         'negativeAttitudesAgingForm' : this.negativeAttitudesAgingForm.geraFormGroup(),
-        'commentsForm' : this.comments.geraFormGroup()  });
+        'commentsForm' : this.comments.geraFormGroup() });
     }
     return this.psychologicalAspectsForm;
   }

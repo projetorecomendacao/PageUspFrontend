@@ -6,4 +6,6 @@ export interface Orientando {
     orientando_email : string;
     dupla_name : string;
     dupla_email : string;
+    trio_name : string;
+    qtdPages : number;
   }

@@ -1,0 +1,36 @@
+<div [formGroup]="pageForm">
+  <div formGroupName="participantFormForm">
+    <div class="caixa-100">
+        <div class="caixa-20 d-flex align-items-center">
+            Qual o seu peso? (Kg)
+        </div>
+        <div class="caixa-20">
+            <input class="w-100 form-control fu" type="number" formControlName="p20_weight" (change)='calculaIMC()'>
+        </div>
+        <div class="caixa-5">
+            <img [src]="mudou('p20_weight')" width="15px" height="15px" >
+        </div>
+        <div class="caixa-10"></div>
+        <div class="caixa-20 d-flex align-items-center">
+            Qual sua altura? (m)
+        </div>
+        <div class="caixa-20">
+            <input class="w-100 form-control fu" type="number" formControlName="p20_height" (change)='calculaIMC()' >
+        </div>
+        <div class="caixa-5">
+            <img [src]="mudou('p20_height')" width="15px" height="15px">
+        </div>
+    </div>
+    <div class="caixa-100">
+        <div class="caixa-20 d-flex align-items-center">
+            IMC: (Kg/m2)
+        </div>
+        <div class="caixa-20">
+            <input class="w-100 form-control" style="background-color: white;" type="number" formControlName="p20_IMC" disabled>
+        </div>
+    </div>
+    <div class="caixa-100">
+        <i>OBS: Usar Ponto ao invés de vírgula para separar a casa decimal</i>
+    </div>
+  </div>
+</div>

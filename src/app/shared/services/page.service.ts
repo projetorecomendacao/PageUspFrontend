@@ -6,7 +6,7 @@ import { DAOService } from './dao.service';
 import { FormGroup } from '@angular/forms';
 import { REST_URL_PAGE } from '../constantes/REST_API_URLs';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'

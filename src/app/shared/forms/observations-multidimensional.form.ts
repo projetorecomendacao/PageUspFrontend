@@ -11,12 +11,12 @@ export class ObservationsMultidimensionalForm {
   geraFormGroup(data?: String): FormGroup {
     if (data){
       this.commentsForm = new FormGroup({
-        'comments': new FormControl(data, [Validators.required])});
+        'comments': new FormControl(data)});
     }
     else 
     {
       this.commentsForm = new FormGroup({
-        'comments': new FormControl(null, [Validators.required])});
+        'comments': new FormControl(null)});
     }
     return this.commentsForm;
   }

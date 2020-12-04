@@ -14,19 +14,23 @@ export class UserService {
   get user(): User { return this._user; }
   getId() { return this.user.getId(); }
   getName() { return this.user.getName(); }
+  getEmail() {return this.user.getEmail();}
 }
 
 export class User {
   private id: number;
   private name: string;
+  private email : string;
 
   constructor(data: any = {}) {
     this.id = data.id;
     this.name = data.name;
+    this.email = data.email;
   }
 
   getId() { return this.id; }
   getName() { return this.name; }
+  getEmail() {return this.email;}
 
   setId(id: number) { this.id = id; }
   setName(name: string) { this.name = name; }

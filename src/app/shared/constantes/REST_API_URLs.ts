@@ -1,5 +1,3 @@
-
-
 //export const REST_URL = 'http://localhost:8000/';
 
 export const REST_URL = 'https://page-brunella.herokuapp.com/';
@@ -39,3 +37,12 @@ export const REST_URL_MULTIDISCIPLINARY_DOMAIN = REST_URL + 'multidisciplinaryDo
 export const REST_URL_PAGE = REST_URL + 'pageUsp/';
 
 export const REST_URL_ORIENTADOR = REST_URL + 'orientador/';
+
+export const REST_URL_AVALIACAO = REST_URL + 'avaliacao/';
+
+export function changeDate(data : string):string{
+    let dia = data.substring(0,2)
+    let mes =  data.substring(3,5)
+    let ano = data.substring(6,10)
+    return mes + '/' + dia + '/' + ano
+}

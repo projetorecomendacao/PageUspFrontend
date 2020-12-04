@@ -18,7 +18,7 @@ export class DemandMapForm{
             gerontologist_assessment: [data.gerontologist_assessment,[Validators.required]],
             demands_problems: [data.demands_problems, [Validators.required]],
             goals: [data.goals, [Validators.required]],
-            actions_organization: [data.actions_organization, [Validators.required]],
+            actions_organization: [data.actions_organization],
         });
     }
     else 
@@ -28,7 +28,7 @@ export class DemandMapForm{
             gerontologist_assessment: ['',[Validators.required]],
             demands_problems: ['', [Validators.required]],
             goals: ['', [Validators.required]],
-            actions_organization: ['', [Validators.required]],
+            actions_organization: [''],
         });
     }
     return this.demandMapForm;
