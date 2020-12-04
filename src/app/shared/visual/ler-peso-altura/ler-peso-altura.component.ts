@@ -19,7 +19,7 @@ export class LerPesoAlturaComponent implements OnInit {
     return this.checaCampo.status(this.pageForm.get('participantFormForm').get(campo));
   }
 
-  calculaIMC(){
+  calculaIMC(): string{
     let peso: number=1;
     let altura: number=1;
     if (this.pageForm.get('participantFormForm').get('p20_weight').valid){
@@ -38,6 +38,7 @@ export class LerPesoAlturaComponent implements OnInit {
     if (IMC >= 27){
       this.pageForm.get('biologicalAspectsForm').get('cardiovascularFactorsForm').get('q43_bmi_obesity').setValue('S');
     }
+    return IMC.toFixed(2)
   }
 
 }

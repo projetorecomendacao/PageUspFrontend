@@ -64,8 +64,7 @@ export class GraficoDimesoesComponent implements OnInit {
       this.soc_en = this.pageForm.get('socialAspectsForm').get('environmentalProblemsForm').get('score').value;
       this.soc_lo = this.pageForm.get('socialAspectsForm').get('lowSocialSupportForm').get('score').value;
       this.soc_vi = this.pageForm.get('socialAspectsForm').get('violenceForm').get('score').value;
-      this.soc_asp = (this.soc_en + this.soc_lo + this.soc_vi) * (100/33);
-    
+      this.soc_asp = (this.soc_en + this.soc_lo + this.soc_vi) * (100/31);
       this.mul_fa = this.pageForm.get('multidimensionalAspectsForm').get('fallsForm').get('score').value;
       this.mul_asp = (this.mul_fa) * (100/16);
 

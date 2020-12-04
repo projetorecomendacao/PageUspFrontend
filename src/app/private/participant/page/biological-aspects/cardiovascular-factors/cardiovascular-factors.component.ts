@@ -11,6 +11,7 @@ export class CardiovascularFactorsComponent implements OnInit {
   peso = 0 
   altura = 0
   imc = 0
+  imcStr = ''
 
   //Indica a questão que não será editável
   q_43 = true;
@@ -35,6 +36,7 @@ export class CardiovascularFactorsComponent implements OnInit {
     this.peso = this.pageForm.get('participantFormForm').get('p20_weight').value
     this.altura = this.pageForm.get('participantFormForm').get('p20_height').value
     this.imc = this.pageForm.get('participantFormForm').get('p20_IMC').value
+    this.imcStr = this.imc.toFixed(2)
     return true
   }
 

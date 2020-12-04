@@ -123,7 +123,7 @@ export class EstruturaQuestao {
         this.questoes[94]='Idade > 75 anos [Ver em dados de identificação]';
         this.questoes[95]='Gênero feminino [Ver em dados de identificação]';
         this.questoes[96]='Alterações cognitivas [Pontuação negativa Teste do Relógio]';
-        this.questoes[97]='Comprometimento AVDs [Pontuação > 4 em Capacidade Funcional]';
+        this.questoes[97]='Comprometimento AVDs [Pontuação < 4 em Capacidade Funcional]';
         this.questoes[98]='Déficit visual [Ver questão 20]';
         this.questoes[99]='Riscos domésticos [Ver questões 72 a 78]';
         this.questoes[100]='Riscos comportamentais [Ver questões 79 a 81]';
