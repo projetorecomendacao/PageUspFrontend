@@ -49,7 +49,7 @@ export class FallsComponent implements OnInit {
       //}
 
       //comprometimeno AVDs
-      if (this.pageForm.get('biologicalAspectsForm').get('functionalDisabilityForm').get('score').value > 4) {
+      if (this.pageForm.get('biologicalAspectsForm').get('functionalDisabilityForm').get('score').value < 4) {
         this.pageForm.get(this.dominio).get(this.dimensao).get('q97_av_ds_commitment').setValue('S');
       } else {
         this.pageForm.get(this.dominio).get(this.dimensao).get('q97_av_ds_commitment').setValue('N');
