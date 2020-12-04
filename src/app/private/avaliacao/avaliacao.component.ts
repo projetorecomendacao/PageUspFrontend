@@ -16,6 +16,7 @@ export class AvaliacaoComponent implements OnInit {
 
   avaliationForm : FormGroup;
   participant: Participant;
+  dataStr : string;
 
   questoes = [
     {"number": 5, "description": "A utilização do sistema é simples para quem já aplicou o PAGe", "name" : "q_05"},
@@ -72,8 +73,10 @@ export class AvaliacaoComponent implements OnInit {
 
   ngOnInit() { 
     this.participant = this.pageService.participant;
-    console.log(this.participant);
     this.avaliationForm = this.avaliacaoform.geraFormGroup();
+    let d = new Date()
+    this.dataStr = d.getDate().toString() + '/' + d.getMonth().toString() + '/' + d.getFullYear().toString()
+    this.avaliationForm.get('q_03').setValue(this.dataStr)
   }
 
   submit() { 
