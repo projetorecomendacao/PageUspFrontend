@@ -1,0 +1,34 @@
+<main class="container-flex">
+    <!--Title-->
+    <h2 class="text-center mt-5"><span class="bg-primary rounded-pill rounded-bottom-0 text-white px-5 py-2" *ngIf="pages.length">Quantidade de Pages: {{pages.length}}</span></h2>
+    <h5 class="text-center text-primary mt-5" *ngIf="!pages.length">Nenhum Page adicionado</h5>
+    <!--------->
+    <!--Users-->
+    <div *ngIf="pages.length" class="d-flex flex-wrap w-xl-50 w-lg-75 mx-auto mb-5">
+      <!--User1-->
+      <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col" width="20%">Data Avaliação</th>
+              <th scope="col" width="20%">Data Criação</th>
+              <th scope="col" width="20%">Última atualização</th>
+              <th scope="col" width="20%">Completo?</th>
+              <th scope="col" width="20%">Visualizar</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let page of pages">
+                <td valign="center">{{page?.avaliation_date | date: 'dd/MM/yyyy'}}</td>
+                <td valign="center">{{page?.created_at | date: 'dd/MM/yyyy'}}</td>
+                <td valign="center">{{page?.updated_at | date: 'dd/MM/yyyy'}}</td>
+                <td valign="center" *ngIf="pageCompleto(page)"><font color="green">Sim</font></td>
+                <td valign="center" *ngIf="!pageCompleto(page)"><font color="red">Não</font></td>
+                <td><button class="btn btn-success" (click)="verPage(page.id)">Visualizar</button></td>
+              </tr>
+          </tbody>
+      </table>
+    </div>
+    <div class="d-flex justify-content-center mt-5">
+      <button class="btn btn-danger" type="button" (click)="voltar()">Voltar</button>
+    </div>
+  </main>

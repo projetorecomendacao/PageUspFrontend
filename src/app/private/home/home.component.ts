@@ -44,4 +44,8 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['private/participantEdit',id]);
   }
 
+  voltar(){
+    this.router.navigate(['private']).then();
+  }
+
 }

@@ -94,7 +94,20 @@
       </div>
     </div>
   </app-questoes>
-  <app-questoes [pageForm]="pageForm" numeroQuestao='43' [posicaoDominio]="posicaoDominio" [notEnabled] = 'q_43'></app-questoes> 
+
+  <app-questoes *ngIf="verPeso()" [pageForm]="pageForm" numeroQuestao='43' [posicaoDominio]="posicaoDominio" [notEnabled] = 'q_43'>
+    <div class="caixa-100 d-flex justify-content-center align-items-center">
+      <div class="caixa-30" >
+        Peso: <b><i>{{peso}}</i></b> Kg
+      </div>
+      <div class="caixa-30">
+        Altura: <b><i>{{altura}}</i></b> m
+      </div>
+      <div class="caixa-40" >
+        IMC: <b><i>{{imc}}</i></b> Kg/m2
+      </div>
+    </div>
+  </app-questoes> 
 
   <app-comments [pageForm]='pageForm' [posicaoDominio]="posicaoDominio"></app-comments>
 </app-dominio>

@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
 import { ChecaCampo } from 'src/app/shared/services/checa-campo';
 import { PageService } from 'src/app/shared/services/page.service';
-import { PageForm } from '../../../../shared/forms/page.form';
+
 
 @Component({
   selector: 'app-cabeca-page',
@@ -11,13 +11,13 @@ import { PageForm } from '../../../../shared/forms/page.form';
 export class CabecaPageComponent implements OnInit {
   
   @Input() pageForm : FormGroup;
+  @Input() desligar : boolean;
 
   teste = 'assets/checked_not_bak.png';
   
   // variáveis booleans que controlam as mensagens de certo e errado no final do form
   public errado: boolean = false;
   public branco: boolean = true;
-
 
   // método que verifica se o form está válido
   formValido(): Boolean{
@@ -34,8 +34,12 @@ export class CabecaPageComponent implements OnInit {
   //O service checaCampo serve para verificar o status do campo e do formulário
   constructor(private checaCampo: ChecaCampo, private pageService : PageService){}
 
-  ngOnInit() { }
+  ngOnInit() {   }
 
+  //Quando for chamado pela view será desabilitado...
+  desabilitar():boolean{
+    return this.desligar || false;
+  }
 
   submit() { 
     this.pageService.submit(this.pageForm);

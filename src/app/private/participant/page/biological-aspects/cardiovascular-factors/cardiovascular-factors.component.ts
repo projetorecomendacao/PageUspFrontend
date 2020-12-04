@@ -8,6 +8,9 @@ import { POSI_cardiovascularFactors } from 'src/app/shared/constantes/POSI_domin
 })
 export class CardiovascularFactorsComponent implements OnInit {
   @Input() pageForm: FormGroup;
+  peso = 0 
+  altura = 0
+  imc = 0
 
   //Indica a questão que não será editável
   q_43 = true;
@@ -21,13 +24,18 @@ export class CardiovascularFactorsComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit():void { 
+  ngOnInit():void {   }
+
+  verPeso(): boolean{
     if (this.pageForm.get('participantFormForm').get('p20_IMC').value >= 27){
       this.pageForm.get('biologicalAspectsForm').get('cardiovascularFactorsForm').get('q43_bmi_obesity').setValue('S');
     } else {
       this.pageForm.get('biologicalAspectsForm').get('cardiovascularFactorsForm').get('q43_bmi_obesity').setValue('N');      
     }
-
+    this.peso = this.pageForm.get('participantFormForm').get('p20_weight').value
+    this.altura = this.pageForm.get('participantFormForm').get('p20_height').value
+    this.imc = this.pageForm.get('participantFormForm').get('p20_IMC').value
+    return true
   }
 
 }

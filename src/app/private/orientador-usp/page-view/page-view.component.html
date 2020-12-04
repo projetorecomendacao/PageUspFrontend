@@ -1,0 +1,30 @@
+    <app-cabeca-page [pageForm]="pageForm" desligar='true'></app-cabeca-page>
+    <app-participant-form [pageForm]="pageForm" desligar='true'></app-participant-form> 
+    <app-cognitive-deficit  [pageForm]="pageForm"></app-cognitive-deficit>
+    <app-negative-attitudes-aging [pageForm]="pageForm"></app-negative-attitudes-aging>
+    <app-depression  [pageForm]="pageForm"></app-depression> 
+    <app-comments-dimensao [pageForm]="pageForm" dimensao="psychologicalAspectsForm" corTitulo="bg-primary" titulo="Observações sobre o bloco psicológico:"></app-comments-dimensao>
+    
+
+    <app-sensory-deficit [pageForm]="pageForm"></app-sensory-deficit>
+    <app-functional-disability [pageForm]="pageForm"></app-functional-disability>
+    <app-malnutrition [pageForm]="pageForm"></app-malnutrition>
+    <app-cardiovascular-factors [pageForm]="pageForm"></app-cardiovascular-factors>
+    <app-misuse-medications [pageForm]="pageForm"></app-misuse-medications>
+    <app-comments-dimensao [pageForm]="pageForm" dimensao="biologicalAspectsForm" corTitulo="bg-success" titulo="Observações sobre o bloco biológico:"></app-comments-dimensao>  
+
+    <app-low-social-support [pageForm]="pageForm"></app-low-social-support>
+    <app-violence [pageForm]="pageForm"></app-violence>
+    <app-environmental-problems [pageForm]="pageForm"></app-environmental-problems>
+    <app-comments-dimensao [pageForm]="pageForm" dimensao="socialAspectsForm" corTitulo="bg-warning" titulo="Observações sobre o bloco social:"></app-comments-dimensao>
+
+    <app-falls [pageForm]="pageForm"></app-falls>
+    <app-comments-dimensao [pageForm]="pageForm" dimensao="multidimensionalAspectsForm" corTitulo="bg-danger" titulo="Observações sobre o bloco multidimensional:"></app-comments-dimensao>
+
+    <app-final-analise  [pageForm]="pageForm" desligar='true'></app-final-analise>
+    
+
+<div class="d-flex justify-content-center mt-5">
+    <button class="btn btn-danger" type="button" (click)="voltar()">Voltar</button>
+    <!-- <button class="btn btn-danger" type="button" (click)="downloadPDF()">Download PDF</button> !-->
+</div>

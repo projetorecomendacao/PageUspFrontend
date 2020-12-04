@@ -7,8 +7,6 @@ import { Participant } from '../../shared/models/participant.model';
 })
 export class ParticipantComponent implements OnInit {
 
-  private participant: Participant;
-
   constructor() { }
 
   ngOnInit() { }

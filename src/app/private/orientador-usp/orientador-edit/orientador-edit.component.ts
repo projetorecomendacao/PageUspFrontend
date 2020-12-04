@@ -47,7 +47,6 @@ export class OrientadorEditComponent implements OnInit {
       return;
     }
     if (this.id == -1) {
-      console.log(this.addOrientadorForm.getRawValue())
       this.dao.postObject(REST_URL_ORIENTADOR, this.addOrientadorForm.getRawValue()).subscribe((data: any) => {
         if (data.id > 0){
           alert('Gravado com sucesso: ' + data.id);          

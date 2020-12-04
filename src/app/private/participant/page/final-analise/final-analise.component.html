@@ -30,7 +30,7 @@
       </div>
       <div class="caixa-100">
         <div class="caixa-90">
-          <textarea class="w-100 form-control" formControlName="dm3_unmet_demands"></textarea>
+          <textarea rows="10" style="background-color: whitesmoke;" class="w-100 form-control" formControlName="dm3_unmet_demands"></textarea>
         </div>
         <div class="caixa-10">
           <img style="margin-left: 10px;" [src]="mudou('dm3_unmet_demands')" width="15px" height="15px">
@@ -46,7 +46,7 @@
       </div>
       <div class="caixa-100">
         <div class="caixa-90">
-          <textarea class="w-100 form-control" formControlName="gerontologist_assessment"></textarea>
+          <textarea rows="10" style="background-color: whitesmoke;" class="w-100 form-control" formControlName="gerontologist_assessment"></textarea>
         </div>
         <div class="caixa-10">
           <img style="margin-left: 10px;" [src]="mudou('gerontologist_assessment')" width="15px" height="15px">
@@ -74,7 +74,7 @@
       </div>
       <div class="caixa-100">
         <div class="caixa-90">
-          <textarea class="w-100 form-control" formControlName="demands_problems"></textarea>
+          <textarea rows="10" style="background-color: whitesmoke;" class="w-100 form-control" formControlName="demands_problems"></textarea>
         </div>
         <div class="caixa-10">
           <img style="margin-left: 10px;" [src]="mudou('demands_problems')" width="15px" height="15px">
@@ -91,7 +91,7 @@
       </div>
       <div class="caixa-100">
         <div class="caixa-90">
-          <textarea class="w-100 form-control" formControlName="goals"></textarea>
+          <textarea rows="10" style="background-color: whitesmoke;" class="w-100 form-control" formControlName="goals"></textarea>
         </div>
         <div class="caixa-10">
           <img style="margin-left: 10px;" [src]="mudou('goals')" width="15px" height="15px">
@@ -99,6 +99,7 @@
       </div>
     </app-base>
 
+    <!-- Foi retirada do pré teste da USP..
     <app-base>
       <div class="caixa-100">
         <div class="caixa-90">
@@ -117,6 +118,7 @@
         </div>
       </div>
     </app-base>
+    -->
 
   </div>
 </div>
@@ -135,16 +137,17 @@
           Horário de término de preenchimento do PAGe
         </div>
         <div class="caixa-20">
-          <input type="text" class="w-100 form-control" formControlName="end_time">
+          <input type="text" class="w-100 form-control" formControlName="end_time" mask="Hh:m0:s0">
         </div>
         <div class="caixa-10">
-          <img style="margin-left: 10px;" [src]="mudou('demands_problems')" width="15px" height="15px">
+          <img style="margin-left: 10px;" [src]="mudou2('end_time')" width="15px" height="15px">
         </div>
       </div>
     </app-base>
   </div>
 </div>
 
+<!--
 
 <h2 class="text-center mt-5">
   <span class="rounded-pill rounded-bottom-0 text-white px-5 py-2" style="font-size: 16px; background-color:gray; font-weight: bold ;">
@@ -155,28 +158,33 @@
   <app-recomendacao [pageForm]="pageForm"></app-recomendacao>
 </div>
 
+-->
 
-<div class="d-flex justify-content-center align-items-center">
-  <div class="caixa-75p">
-    <div class="caixa-15 d-flex justify-content-center">
-      <button type="button" class="btn btn-success" name="bc1" matStepperPrevious> 
-        <<Anterior 
-      </button>
+<div *ngIf='!desabilitar()'>
+
+  <div class="d-flex justify-content-center align-items-center">
+    <div class="caixa-75p">
+      <div class="caixa-15 d-flex justify-content-center">
+        <button type="button" class="btn btn-success" name="bc1" matStepperPrevious> 
+          <<Anterior 
+        </button>
+      </div>
+      
+      <!--
+      <div *ngIf='!formValido()' class="caixa-15r d-flex justify-content-center" >
+        <button type="button" class="btn btn-secondary" disabled >
+          Salvar 
+        </button>
+      </div>
+  
+      <div *ngIf='formValido()' class="caixa-15r d-flex justify-content-center" >
+        <button type="button" class="btn btn-success" name="bc2" (click)="submit()">
+          Salvar
+        </button>
+      </div>
+      -->
+      
     </div>
-    
-    <!--
-    <div *ngIf='!formValido()' class="caixa-15r d-flex justify-content-center" >
-      <button type="button" class="btn btn-secondary" disabled >
-        Salvar 
-      </button>
-    </div>
- 
-    <div *ngIf='formValido()' class="caixa-15r d-flex justify-content-center" >
-      <button type="button" class="btn btn-success" name="bc2" (click)="submit()">
-        Salvar
-      </button>
-    </div>
-    -->
-    
   </div>
+
 </div>

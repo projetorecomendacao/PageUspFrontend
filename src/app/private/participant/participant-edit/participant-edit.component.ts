@@ -47,13 +47,13 @@ export class ParticipantEditComponent implements OnInit {
     }
     if (this.id == -1) {
       this.dao.postObject(REST_URL_PARTICIPANTS, this.addParticipantForm.getRawValue()).subscribe((data: any) => {
-        this.router.navigate(['private']);
+        this.router.navigate(['private/home']);
       }, error => {
         alert('Não foi possível gravar os dados do participante'); 
       }); 
     } else {
       this.dao.putObject(REST_URL_PARTICIPANTS, this.addParticipantForm.getRawValue(), this.id.toString()).subscribe((data: any) => {
-        this.router.navigate(['private']);
+        this.router.navigate(['private/home']);
       }, error => {
         alert('Não foi possível gravar os dados do participante'); 
       }); 
@@ -84,7 +84,7 @@ export class ParticipantEditComponent implements OnInit {
 
   limpa(){
     this.addParticipantForm.reset();
-    this.submitted=false;
+    this.router.navigate(['private/home']);
   }
 
 

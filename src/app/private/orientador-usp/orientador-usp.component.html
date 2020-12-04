@@ -13,18 +13,21 @@
     <table class="table table-striped">
         <thead>
           <tr>
-            <th scope="col" width="30%">Aluno reponsável</th>
-            <th scope="col" width="30%">Dupla</th>
-            <th scope="col" width="20%">Alterar</th>
-            <th scope="col" width="20%">Pages</th>
+            <th scope="col" width="20%">Aluno reponsável</th>
+            <th scope="col" width="20%">Dupla</th>
+            <th scope="col" width="20%">Anexo</th>
+            <th scope="col" width="20%">Editar Trio</th>
+            <th scope="col" width="20%">Gerenciar Pages</th>
           </tr>
         </thead>
         <tbody>
             <tr *ngFor="let participant of participants">
               <td valign="center">{{participant.orientando_name}}</td>
               <td valign="center">{{participant.dupla_name}}</td>
-              <td><button class="btn btn-success" (click)="addParticipant(participant.id)">Alterar</button></td>
-              <td><button class="btn btn-primary" (click)="goPages(participant.id)">Pages</button></td>
+              <td valign="center">{{participant.trio_name}}</td>
+              <td><button class="btn btn-success" (click)="addParticipant(participant.id)">Editar</button></td>
+              <td *ngIf='participant.qtdPages > 0'><button class="btn btn-primary" (click)="goPages(participant.id)">PAGe</button></td>
+              <td *ngIf='!participant.qtdPages > 0'><button class="btn btn-secondary" disabled>PAGe</button></td>
             </tr>
         </tbody>
     </table>
@@ -36,3 +39,4 @@
     <button class="btn btn-danger" type="button" (click)="voltar()">Voltar</button>
   </div>
 </main>
+

@@ -39,14 +39,14 @@ export class PageComponent implements OnInit {
       return this.dao.postObject(REST_URL_PAGE,enviar).subscribe((data:any)=>{
         this.pageService.page.id = data.id;
         alert('Foi criado um novo page com o Código: ' + data.id);
-        this.router.navigate(['private/']).then();        
+        this.router.navigate(['private/home']).then();        
       }, error => {
         alert('Problema na gravação do PAGe, tente novamente..');
       });
     } else {
       return this.dao.putObject(REST_URL_PAGE,enviar, this.pageService.page.id.toString()).subscribe((data:any)=>{
         alert('Foram gravados todos os dados do page Código: ' + this.pageService.page.id.toString());
-        this.router.navigate(['private/']).then();    
+        this.router.navigate(['private/home']).then();    
       },error => {
         alert('Problema na gravação do PAGe, tente novamente..');
       });
@@ -54,8 +54,8 @@ export class PageComponent implements OnInit {
   }
 
   cancelar(){
-    if (window.confirm("Confirma o cancelamento da edição do PAGe? As alterações realizadas serão descartadas."))
-      this.router.navigate(['private/']).then();
+    if (window.confirm("Deseja sair da edição do PAGe?"))
+      this.router.navigate(['private/home']).then();
   }
 
   valido():boolean{

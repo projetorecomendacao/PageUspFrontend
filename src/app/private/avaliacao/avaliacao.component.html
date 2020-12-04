@@ -1,0 +1,122 @@
+<!--Title-->
+<h2 class="text-center mt-5"><span class="gray rounded-pill rounded-bottom-0 text-white px-5 py-2">Questionário de Avaliação</span></h2>
+
+<div class="w-xl-75 w-d-flex align-items-center-75 mx-auto border bg-white shadow-d-flex align-items-center" [formGroup]="avaliationForm">
+    <app-base>
+      <!-- Lado Esquerdo-->
+      <div class="col-12 col-md-1 d-flex justify-content-center align-items-center example Text3" style="background-color: lightgrey;">
+        <b>QUESTIONÁRIO DE AVALIAÇÃO</b>
+      </div>
+
+      <!-- Centro -->
+      <span class="col-12 col-md-11">
+
+        <app-base>
+            <div class="caixa-25 d-flex align-items-center">
+              1. Titulação acadêmica
+            </div>
+            <div class="caixa-25">
+              <select class="w-100 form-control fu" formControlName="q_01" >
+                <option value="" selected disabled>Selecione</option>
+                <option value="Aluno(a) de graduação">Aluno(a) de graduação</option>
+                <option value="Graduado(a)">Graduado(a)</option>
+                <option value="Especialista">Especialista</option>
+                <option value="Mestre">Mestre</option>
+                <option value="Doutor(a)">Doutor(a)</option>
+                <option value="Pós-doutor(a)">Pós-doutor(a)</option>
+            </select>
+            </div>
+            <div class="caixa-5">
+              <img [src]="mudou('q_01')" width="15px" height="15px">
+            </div>
+        </app-base>
+
+
+        <app-base>
+          <div class="caixa-25 d-flex align-items-center">
+            2. Área de atuação 
+          </div>
+          <div class="caixa-70">
+            <input class="w-100 form-control fu" type="text" formControlName="q_02" >  
+          </div>
+          <div class="caixa-5">
+            <img [src]="mudou('q_02')" width="15px" height="15px">
+          </div>
+        </app-base>
+
+        <app-base>
+            <div class="caixa-25 d-flex align-items-center">
+              3. Data da avaliação 
+            </div>
+            <div class="caixa-25">
+              <input class="w-100 form-control fu" type="text" formControlName="q_03" >  
+            </div>
+            <div class="caixa-50">
+            </div>
+        </app-base>
+
+        <app-base>
+          <div class="caixa-70 d-flex align-items-center">
+            4. A quanto tempo faz uso de sistemas informatizados na área de gerontologia ou saúde? 
+          </div>
+          <div class="caixa-25">
+            <select class="w-100 form-control fu" formControlName="q_04" >
+              <option value="" selected disabled>Selecione</option>
+              <option value="O page on-line é o primeiro">O page on-line é o primeiro</option>
+              <option value="Faz uso a menos de um ano">Faz uso a menos de um ano</option>
+              <option value="Faz uso a mais de um ano">Faz uso a mais de um ano</option>
+            </select>
+          </div>
+          <div class="caixa-5">
+            <img [src]="mudou('q_04')" width="15px" height="15px">
+          </div>
+      </app-base>
+
+
+        <app-base *ngFor="let questao of questoes">
+            <div class="caixa-70 d-flex align-items-center">
+              {{questao.number}}. {{questao.description}}
+            </div>
+            <div class="caixa-25">
+              <select class="w-100 form-control fu" formControlName="{{questao.name}}" >
+                <option value="" selected disabled>Selecione</option>
+                <option *ngFor="let op of opcoes" value="{{op.value}}">{{op.description}}</option>
+            </select>
+            </div>
+            <div class="caixa-5">
+              <img [src]="mudou(questao.name)" width="15px" height="15px">
+            </div>
+        </app-base>
+
+        <app-base>
+          <div class="caixa-100">
+            Comentários (Erros encontrados, críticas e sugestões) 
+          </div>
+          <div class="caixa-100">
+            <textarea class="w-100 form-control fu" formControlName="comments" rows="10" > </textarea> 
+          </div>
+        </app-base>
+
+                
+      </span>
+
+      <div class="caixa-100">
+        <app-status [valido]="formValido()" [branco]="branco" [errado]="errado"></app-status>
+      </div>  
+
+    </app-base>
+
+    <div class="caixa-100">
+      <div class="caixa-20 d-flex align-items-start">
+        <button class="btn btn-danger" (click)="voltar()" type="button">Voltar</button>
+      </div>
+      <div class="caixa-60"></div>
+      <div *ngIf = "avaliationForm.valid"class="caixa-20" style="text-align: right;">      
+        <button class="btn btn-success" (click)="submit()">Salvar</button>
+      </div>
+      <div *ngIf = "!avaliationForm.valid"class="caixa-20" style="text-align: right;">      
+        <button class="btn btn-secondary" (click)="submit()" disabled>Salvar</button>
+      </div>
+    </div>
+</div>
+

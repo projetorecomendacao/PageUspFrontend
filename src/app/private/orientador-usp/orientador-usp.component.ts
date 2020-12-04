@@ -16,6 +16,7 @@ export class OrientadorUspComponent implements OnInit {
 
   ngOnInit(): void {
     this.dao.getObjects(REST_URL_ORIENTADOR).subscribe((data: Orientando[]) => {
+      console.log(data)
       this.participants = data;
     }, erro => {
       alert('Não foi possível acessar os dados');
@@ -29,7 +30,7 @@ export class OrientadorUspComponent implements OnInit {
   }
 
   goPages(id : number){
-    alert('Ainda não implementado... Em Construção')
+    this.router.navigate(['private/orientadorListPage',id]).then();
   }
 
   voltar(){

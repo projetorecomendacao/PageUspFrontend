@@ -107,6 +107,12 @@ import { OrientadorUspComponent } from './orientador-usp/orientador-usp.componen
 import { ParticipantForm } from '../shared/forms/participant.form';
 import { OrientadorEditComponent } from './orientador-usp/orientador-edit/orientador-edit.component';
 import { OrientadorForm } from '../shared/forms/orientador.form';
+import { OrientadorListPageComponent } from './orientador-usp/orientador-list-page/orientador-list-page.component';
+import { PageViewComponent } from './orientador-usp/page-view/page-view.component';
+import { LerPesoAlturaComponent } from '../shared/visual/ler-peso-altura/ler-peso-altura.component';
+import { PrivateIndexComponent } from './private-index/private-index.component';
+import { AvaliacaoComponent } from './avaliacao/avaliacao.component';
+import { AvaliacaoForm } from '../shared/forms/avaliacao.form';
 
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
@@ -170,7 +176,12 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
     AtividadesRecomendadasComponent,
     RecomendacaoComponent,
     OrientadorUspComponent,
-    OrientadorEditComponent
+    OrientadorEditComponent,
+    OrientadorListPageComponent,
+    PageViewComponent,
+    LerPesoAlturaComponent,
+    PrivateIndexComponent,
+    AvaliacaoComponent,
   ],
   imports: [
     CommonModule,
@@ -218,7 +229,8 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
     AtividadesRec,
     DemandMapForm,
     ParticipantForm,
-    OrientadorForm
+    OrientadorForm,
+    AvaliacaoForm
   ]
 })
 export class PrivateModule { }

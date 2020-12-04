@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/security/user.service';
+
 
 @Component({
   selector: 'app-navbar',
@@ -6,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userService: UserService) { }
 
   ngOnInit() {
+  }
+
+  sair(){
+  }
+
+  public desenvolvedor(): boolean {
+    return (this.userService.getEmail() == 'laurentino.dantas@usp.br' || this.userService.getEmail() == 'ruth.melo@usp.br');
   }
 
 }

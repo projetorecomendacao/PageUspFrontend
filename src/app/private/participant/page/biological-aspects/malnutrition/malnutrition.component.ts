@@ -11,6 +11,11 @@ import { POSI_malnutrition } from 'src/app/shared/constantes/POSI_dominios';
 export class MalnutritionComponent implements OnInit {
   @Input() pageForm: FormGroup;
 
+  peso = 0
+  altura = 0
+  imc = 0
+
+  //opções para os campos 
   opcoes = [
     {valor : "nda", descricao : "Não perdeu peso"},
     {valor : "Mais de 3 KG", descricao : "Mais de 3 KG"},
@@ -35,6 +40,9 @@ export class MalnutritionComponent implements OnInit {
     } else {
       this.pageForm.get('biologicalAspectsForm').get('malnutritionForm').get('q35_bmi_less22').setValue('N');      
     }
+    this.peso = this.pageForm.get('participantFormForm').get('p20_weight').value
+    this.altura = this.pageForm.get('participantFormForm').get('p20_height').value
+    this.imc = this.pageForm.get('participantFormForm').get('p20_IMC').value
   }  
  
 

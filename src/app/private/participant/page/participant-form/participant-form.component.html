@@ -58,28 +58,42 @@
 
         <!--Endereço-->
         <app-base>
-          <div class="caixa-15 d-flex align-items-center">
-            <b>2. </b>Endereço: 
+          <div class="caixa-100">
+            <div class="caixa-15 d-flex align-items-center">
+              <b>2. </b>Endereço: 
+            </div>
+            <div class="caixa-80">
+              <input class="w-100 fu-not" type="text" [value]="participant.p02_address" disabled > 
+            </div>
+            <div class="caixa-5">
+            </div>
           </div>
-          <div class="caixa-80">
-            <input class="w-100 form-control fu" type="text" formControlName="p02_address" >  
-          </div>
-          <div class="caixa-5">
-            <img [src]="mudou('p02_address')" width="15px" height="15px">
-          </div>
+          <div class="caixa-100">
+            <div class="caixa-15"> </div>
+            <div class="caixa-85">
+              <i>*Este campo só pode ser alterado no cadastro de participantes</i>
+            </div>
+          </div> 
         </app-base>
 
         <!--Telefones-->
         <app-base>
-          <div class="caixa-15 d-flex align-items-center">
-            <b>3. </b>Telefones: 
+          <div class="caixa-100">
+            <div class="caixa-15 d-flex align-items-center">
+              <b>3. </b>Contatos: 
+            </div>
+            <div class="caixa-80">
+              <input class="w-100 fu-not" type="text" [value]="participant.p03_communication" disabled >               
+            </div>
+            <div class="caixa-5">
+            </div>
           </div>
-          <div class="caixa-80">
-            <input class="w-100 form-control fu" type="text" formControlName="p03_communication" >  
-          </div>
-          <div class="caixa-5">
-            <img [src]="mudou('p03_communication')" width="15px" height="15px">
-          </div>
+          <div class="caixa-100">
+            <div class="caixa-15"> </div>
+            <div class="caixa-85">
+              <i>*Este campo só pode ser alterado no cadastro de participantes</i>
+            </div>
+          </div> 
         </app-base>
 
         <!-- data de Nascimento / Idade / gênero -->
@@ -324,21 +338,21 @@
           </div>          
         </app-base> 
         
+        <!-- Este campo chama acompanhamento de saúde no documento original-->
         
-        
-        <div class="caixa-100 centro2">AUTO RELATO DE SAÚDE</div>
+        <div class="caixa-100 centro2">ACOMPANHAMENTO DE SAÚDE</div>
         <app-base>
-          <div class="caixa-10 d-flex align-items-center">
-            Auto relato de saúde:
+          <div class="caixa-100">
+            Acompanhamento de saúde:
           </div>
-          <div class="caixa-85">
-            <textarea class="w-100 form-control fu" formControlName="p16_health_self_report" ></textarea>
+          <div class="caixa-100">
+            <textarea class="w-100 form-control fu" formControlName="p16_health_self_report" rows="10"></textarea>
           </div>
-          <div class="caixa-5">
-            <img [src]="mudou('p16_health_self_report')" width="15px" height="15px">
-          </div>          
         </app-base>
-        <!-- peso e altura originalmente estava na questão 32 -->
+
+        <!-- final questões originais page -->
+
+        <!-- peso e altura são lidos na questão 35  
         <app-base>
           <div class="caixa-20 d-flex align-items-center">
             Qual o seu peso?
@@ -364,10 +378,13 @@
           <div class="caixa-15">
             <input class="w-100 form-control" style="background-color: white;" type="number" formControlName="p20_IMC" disabled>
           </div>
-
         </app-base>
-        <!-- final questões originais page -->
 
+        -->
+
+
+
+        <!-- Questões referentes a tranporte .. 
         <div class="caixa-100 centro2">INFORMAÇÕES SOBRE TRANSPORTE</div> 
         <app-base>
           <div class="caixa-25 d-flex align-items-center">
@@ -437,18 +454,17 @@
           <div class="caixa-5">
             <img [src]="mudou('p30_ride_with')" width="15px" height="15px">
           </div>
-        </app-base>        
+        </app-base> 
+        
+        Retiradas no teste da USP-->
 
         <div class="caixa-100 centro2">OBSERVAÇÕES SOBRE AS INFORMAÇÕES PESSOAIS</div> 
         <app-base>
-          <div class="caixa-25 d-flex align-items-center">
+          <div class="caixa-100">
             informações adicionais e observações sobre as informações pessoais do paciente
           </div>
-          <div class="caixa-70">
-            <textarea class="w-100 form-control fu" formControlName="p31_comments"></textarea>
-          </div>
-          <div class="caixa-5">
-            <img [src]="mudou('p31_comments')" width="15px" height="15px">
+          <div class="caixa-100">
+            <textarea class="w-100 form-control fu" formControlName="p31_comments" rows="10"></textarea>
           </div>
         </app-base>                 
       </span>
@@ -456,12 +472,14 @@
       <div class="caixa-100">
         <app-status [valido]="formValido()" [branco]="branco" [errado]="errado"></app-status>
       </div>  
-
+      <button (click)="mostrar()"></button>
     </app-base>
   </div>
 </div>
 
-<app-botoes [valido]="formValido()" [pageForm]="pageForm"></app-botoes>
+<div *ngIf='!desabilitar()'>
+  <app-botoes [valido]="formValido()" [pageForm]="pageForm"></app-botoes>
 
-<app-instrucoes></app-instrucoes>
+  <app-instrucoes></app-instrucoes>
 
+</div>

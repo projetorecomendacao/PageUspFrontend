@@ -13,6 +13,7 @@ import { REST_URL_PAGE } from 'src/app/shared/constantes/REST_API_URLs';
 export class FinalAnaliseComponent implements OnInit {
 
   @Input() pageForm: FormGroup;
+  @Input() desligar : boolean;
 
   conta:number=0;
   
@@ -22,11 +23,12 @@ export class FinalAnaliseComponent implements OnInit {
 
   // método que verifica a situação dos campos do form
   mudou(campo: string): string{ 
-    var volta: string = this.checaCampo.inicio();
-    if(!this.pageForm.get('demandMapForm').get(campo).pristine){
-      volta = this.checaCampo.checa(this.pageForm.get('demandMapForm').get(campo).valid);
-    }
-    return volta;
+    return this.checaCampo.status(this.pageForm.get('demandMapForm').get(campo));
+  }
+
+  //Verifica e muda a figura de status do campo horário final que é do cabeça page
+  mudou2(campo : string): string {
+     return this.checaCampo.status(this.pageForm.get('cabecaPageForm').get(campo));
   }
 
   graficos(): boolean{
@@ -40,5 +42,10 @@ export class FinalAnaliseComponent implements OnInit {
 
   submit() { 
 
+  }
+
+  //Quando for chamado pela view será desabilitado...
+  desabilitar():boolean{
+    return this.desligar || false;
   }
 }
