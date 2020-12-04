@@ -42,11 +42,11 @@ export class AvaliacaoComponent implements OnInit {
     ]
 
     opcoes = [
-      {"value" : "1", "description" : "Concordo totalmente"},
-      {"value" : "2", "description" : "Concordo parcialmente"},
-      {"value" : "3", "description" : "Não concordo nem discordo"},
-      {"value" : "4", "description" : "Discordo parcialmente"},
-      {"value" : "5", "description" : "Discordo totalmente"}
+      {"value" : "Concordo totalmente", "description" : "Concordo totalmente"},
+      {"value" : "Concordo parcialmente", "description" : "Concordo parcialmente"},
+      {"value" : "Não concordo nem discordo", "description" : "Não concordo nem discordo"},
+      {"value" : "Discordo parcialmente", "description" : "Discordo parcialmente"},
+      {"value" : "Discordo totalmente", "description" : "Discordo totalmente"}
     ]
 
 
