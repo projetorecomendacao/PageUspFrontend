@@ -42,11 +42,11 @@ export class FallsComponent implements OnInit {
       }
 
       //Teste do relógio - Alterações cognitivas
-      if (this.pageForm.get('psychologicalAspectsForm').get('cognitiveDeficitForm').get('q6_clock').value == 'N') {
-        this.pageForm.get(this.dominio).get(this.dimensao).get('q96_cognitive_alterations').setValue('S');
-      } else {
-        this.pageForm.get(this.dominio).get(this.dimensao).get('q96_cognitive_alterations').setValue('N');
-      }
+      //if (this.pageForm.get('psychologicalAspectsForm').get('cognitiveDeficitForm').get('q6_clock').value == 'N') {
+      //  this.pageForm.get(this.dominio).get(this.dimensao).get('q96_cognitive_alterations').setValue('S');
+      //} else {
+      //  this.pageForm.get(this.dominio).get(this.dimensao).get('q96_cognitive_alterations').setValue('N');
+      //}
 
       //comprometimeno AVDs
       if (this.pageForm.get('biologicalAspectsForm').get('functionalDisabilityForm').get('score').value > 4) {
@@ -63,18 +63,18 @@ export class FallsComponent implements OnInit {
       }
       
       //Riscos domésticos
-      if (this.pageForm.get('socialAspectsForm').get('environmentalProblemsForm').get('domesticRisk').value < 7) {
-        this.pageForm.get(this.dominio).get(this.dimensao).get('q99_domestic_risks').setValue('S');
-      } else {
-        this.pageForm.get(this.dominio).get(this.dimensao).get('q99_domestic_risks').setValue('N');
-      }
+      //if (this.pageForm.get('socialAspectsForm').get('environmentalProblemsForm').get('domesticRisk').value < 7) {
+      //  this.pageForm.get(this.dominio).get(this.dimensao).get('q99_domestic_risks').setValue('S');
+      //} else {
+      //  this.pageForm.get(this.dominio).get(this.dimensao).get('q99_domestic_risks').setValue('N');
+      //}
 
       //Riscos comportamentais
-      if (this.pageForm.get('socialAspectsForm').get('environmentalProblemsForm').get('behaviorRisk').value < 3) {
-        this.pageForm.get(this.dominio).get(this.dimensao).get('q100_behavior_risk').setValue('S');
-      } else {
-        this.pageForm.get(this.dominio).get(this.dimensao).get('q100_behavior_risk').setValue('N');
-      }
+      //if (this.pageForm.get('socialAspectsForm').get('environmentalProblemsForm').get('behaviorRisk').value < 3) {
+      //  this.pageForm.get(this.dominio).get(this.dimensao).get('q100_behavior_risk').setValue('S');
+      //} else {
+      //  this.pageForm.get(this.dominio).get(this.dimensao).get('q100_behavior_risk').setValue('N');
+      //}
 
       //Inatividade
       if (this.pageForm.get('biologicalAspectsForm').get('cardiovascularFactorsForm').get('q42_practice_exercises').value == 'N') {
