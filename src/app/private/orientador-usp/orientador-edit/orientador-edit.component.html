@@ -36,7 +36,7 @@
     
       <!--Name do trio-->
       <div style="width: 100%;" >
-        <app-input errorMessage='Nome inválido' label='Nome aluno trio--'>
+        <app-input errorMessage='Nome inválido' label='Nome aluno trio'>
           <input class="w-100 form-control fu" type="text" id="nomeTrio" formControlName="trio_name" [ngClass]="{ 'is-invalid': submitted && !f.dupla_name.valid }" [ngClass]="{ 'is-valid': f.dupla_name.valid }">
         </app-input>
       </div>
@@ -46,9 +46,6 @@
           <button class="btn btn-danger" (click)="cancela()" type="button">Voltar</button>
         </div>
         <div class="caixa-60"></div>
-        <div class="caixa-20" style="text-align: right;">      
-          <button class="btn btn-success" (click)="addParticipant()">Salvar</button>
-        </div>
         <div class="caixa-20" style="text-align: right;">      
           <button class="btn btn-success" (click)="addParticipant()">Salvar</button>
         </div>

@@ -4,7 +4,8 @@ import { ChecaCampo } from 'src/app/shared/services/checa-campo';
 import { Router } from '@angular/router';
 import { PageService } from 'src/app/shared/services/page.service';
 import { DAOService } from 'src/app/shared/services/dao.service';
-import { REST_URL_PAGE } from 'src/app/shared/constantes/REST_API_URLs';
+declare const expFile : any;
+
 
 @Component({
   selector: 'app-final-analise',
@@ -14,6 +15,7 @@ export class FinalAnaliseComponent implements OnInit {
 
   @Input() pageForm: FormGroup;
   @Input() desligar : boolean;
+  resultado : string;
 
   conta:number=0;
   
@@ -47,5 +49,10 @@ export class FinalAnaliseComponent implements OnInit {
   //Quando for chamado pela view será desabilitado...
   desabilitar():boolean{
     return this.desligar || false;
+  }
+
+  gravarTxt(){
+    this.resultado = "Page: " + this.pageService.page.id.toString() + JSON.stringify(this.pageForm.value,null,2)
+    expFile(this.resultado);
   }
 }
