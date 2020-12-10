@@ -30,7 +30,7 @@ export class PagesListComponent implements OnInit {
 
   constructor(private router: Router, private pageService: PageService, 
               private daoService: DAOService, private pageGerador : PageGerador, 
-              private userService: UserService, private estruturaPage : EstruturaPage) {
+              private userService: UserService) {
 
   }
 

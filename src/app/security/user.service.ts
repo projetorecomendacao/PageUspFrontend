@@ -8,7 +8,10 @@ export class UserService {
   private _user: User = new User();
 
   constructor(protected dao: DAOService) {
-    dao.postObject(REST_URL_EXPERTS + 'getSelf/', {}).subscribe(data => this._user = new User(data));
+    dao.postObject(REST_URL_EXPERTS + 'getSelf/', {}).subscribe((data : any) => {
+      console.log(data)
+      this._user = new User(data)
+    });
   }
 
   get user(): User { return this._user; }

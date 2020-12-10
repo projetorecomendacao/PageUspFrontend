@@ -19,10 +19,14 @@ export class LoginComponent implements OnInit {
   signInWithGoogle(): void {
     this.authService.signIn(GoogleLoginProvider.PROVIDER_ID).then(
       userData => {
-        console.log(userData.authToken);
-        this.dao.postObject(REST_URL_EXPERTS, {}).subscribe(_ => {
-          this.authGuard.setCanLoad(true);
-          this.router.navigate(['/private']);
+        console.log(userData);
+        this.dao.postObject(REST_URL_EXPERTS, {}).subscribe((data : any) => {
+          if (data.id != -1) {
+            this.authGuard.setCanLoad(true);
+            this.router.navigate(['/private']);
+          } else {
+            alert('Usuário não autorizado...');
+          }
         });
       },
       rejection => {
