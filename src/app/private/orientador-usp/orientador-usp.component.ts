@@ -18,6 +18,7 @@ export class OrientadorUspComponent implements OnInit {
     this.dao.getObjects(REST_URL_ORIENTADOR).subscribe((data: Orientando[]) => {
       console.log(data)
       this.participants = data;
+      this.participants.sort((a, b) => (a.orientando_name < b.orientando_name) ? -1 : 1);
     }, erro => {
       alert('Não foi possível acessar os dados');
       this.router.navigate(['private']).then();

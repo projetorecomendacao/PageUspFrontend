@@ -7,26 +7,27 @@ import { SecurityModule } from './security/security.module';
 import {MatTabsModule} from '@angular/material/tabs';
 
 import { AppComponent } from './app.component';
-import { AuthServiceConfig, GoogleLoginProvider, SocialLoginModule } from 'angularx-social-login';
+import { SocialAuthServiceConfig, GoogleLoginProvider, SocialLoginModule } from 'angularx-social-login';
 import { AuthGuard } from './security/auth.guard';
 import { AuthInterceptor } from './security/auth.interceptor';
 import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DAOService } from './shared/services/dao.service';
+import { UserService } from './security/user.service';
 
 
 
-const config = new AuthServiceConfig([
-  {
-    id: GoogleLoginProvider.PROVIDER_ID,
-    provider: new GoogleLoginProvider('164416639233-1h26ajia8qontaalsev3v8cgblbdmvm4.apps.googleusercontent.com')
-  }
-]);
+//const config = new AuthServiceConfig([
+//  {
+//    id: GoogleLoginProvider.PROVIDER_ID,
+//    provider: new GoogleLoginProvider('164416639233-1h26ajia8qontaalsev3v8cgblbdmvm4.apps.googleusercontent.com')
+//  }
+//]);
 
-export function provideConfig() {
-  return config;
-}
+//export function provideConfig() {
+//  return config;
+//}
 
 
 
@@ -53,9 +54,20 @@ export function provideConfig() {
       provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true
     },
     {
-      provide: AuthServiceConfig,
-      useFactory: provideConfig
-    }
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              '164416639233-1h26ajia8qontaalsev3v8cgblbdmvm4.apps.googleusercontent.com'
+            )
+          }
+        ]
+      } as SocialAuthServiceConfig,
+    },
+    UserService
   ],
   bootstrap: [AppComponent]
 })

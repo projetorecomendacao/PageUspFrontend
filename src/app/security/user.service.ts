@@ -1,40 +1,40 @@
 import { Injectable } from '@angular/core';
-import { REST_URL_EXPERTS } from '../shared/constantes/REST_API_URLs';
-import { DAOService } from '../shared/services/dao.service';
 
 @Injectable()
 export class UserService {
 
-  private _user: User = new User();
+  logado: boolean = false;
+  private _user: User;
+  userGoogle : UserGoogle;
 
-  constructor(protected dao: DAOService) {
-    dao.postObject(REST_URL_EXPERTS + 'getSelf/', {}).subscribe((data : any) => {
-      console.log(data)
-      this._user = new User(data)
-    });
+  constructor() {
+    //dao.postObject(REST_URL_EXPERTS + 'getSelf/', {}).subscribe((data : any) => {
+    //  console.log(data)
+    //  this._user = data
+    //});
   }
 
   get user(): User { return this._user; }
-  getId() { return this.user.getId(); }
-  getName() { return this.user.getName(); }
-  getEmail() {return this.user.getEmail();}
+  getId() { return this.user.id; }
+  getName() { return this.user.name; }
+  getEmail() {return this.user.email;}
+  set user(user : User) { this._user = user}
 }
 
-export class User {
-  private id: number;
-  private name: string;
-  private email : string;
+export interface User {
+  id: number; // Id do especialista....
+  name: string;
+  email : string;
+}
 
-  constructor(data: any = {}) {
-    this.id = data.id;
-    this.name = data.name;
-    this.email = data.email;
-  }
-
-  getId() { return this.id; }
-  getName() { return this.name; }
-  getEmail() {return this.email;}
-
-  setId(id: number) { this.id = id; }
-  setName(name: string) { this.name = name; }
+export interface UserGoogle {
+  authToken: string;
+  email: string;
+  firstName: string;
+  id: string;
+  idToken: string;
+  lastName: string;
+  name: string;
+  photoUrl: string;
+  provider: string;
 }

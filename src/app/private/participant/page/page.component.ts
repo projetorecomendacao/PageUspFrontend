@@ -34,21 +34,33 @@ export class PageComponent implements OnInit {
 
   salvar(){
     var enviar = this.pageService.criaEnviar(this.pageForm);
-
+    // Serão feitas duas tentativas.. caso as duas deem erro 
+    // será emitida a mensagem de erro..
     if (this.pageService.page.id <= 0){
-      return this.dao.postObject(REST_URL_PAGE,enviar).subscribe((data:any)=>{
+      this.dao.postObject(REST_URL_PAGE,enviar).subscribe((data:any)=>{
         this.pageService.page.id = data.id;
         alert('Foi criado um novo page com o Código: ' + data.id);
         this.router.navigate(['private/home']).then();        
       }, error => {
-        alert('Problema na gravação do PAGe, tente novamente..');
+        this.dao.postObject(REST_URL_PAGE,enviar).subscribe((data:any)=>{
+          this.pageService.page.id = data.id;
+          alert('Foi criado um novo page com o Código: ' + data.id);
+          this.router.navigate(['private/home']).then();        
+        }, error => {
+          alert('Problema na gravação do PAGe, tente novamente..');
+        });
       });
     } else {
-      return this.dao.putObject(REST_URL_PAGE,enviar, this.pageService.page.id.toString()).subscribe((data:any)=>{
+      this.dao.putObject(REST_URL_PAGE,enviar, this.pageService.page.id.toString()).subscribe((data:any)=>{
         alert('Foram gravados todos os dados do page Código: ' + this.pageService.page.id.toString());
         this.router.navigate(['private/home']).then();    
       },error => {
-        alert('Problema na gravação do PAGe, tente novamente..');
+        this.dao.putObject(REST_URL_PAGE,enviar, this.pageService.page.id.toString()).subscribe((data:any)=>{
+          alert('Foram gravados todos os dados do page Código: ' + this.pageService.page.id.toString());
+          this.router.navigate(['private/home']).then();    
+        },error => {
+          alert('Problema na gravação do PAGe, tente novamente..');
+        });
       });
     }
   }

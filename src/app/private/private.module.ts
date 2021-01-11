@@ -39,7 +39,6 @@ import {
 import {
   ObservationsMultidimensionalComponent
 } from './participant/page/multidimensional-aspect/observations-multidimensional/observations-multidimensional.component';
-import { UserService } from '../security/user.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { PagesListComponent } from './participant/pages-list/pages-list.component';
 import { NavbarComponent } from './navbar/navbar.component';
@@ -196,7 +195,7 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
       showMaskTyped : true,
     }) 
   ],
-  providers: [UserService,
+  providers: [
     PageForm,
     PsychologicalAspectsForm,
     BiologicalAspectsForm,
