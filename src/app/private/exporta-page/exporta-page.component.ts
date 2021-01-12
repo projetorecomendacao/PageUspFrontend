@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { platformBrowserDynamicTesting } from '@angular/platform-browser-dynamic/testing';
 import { Router } from '@angular/router';
 import { BIO_max_score, MUL_max_score, PSI_max_score, SOC_max_score } from 'src/app/shared/constantes/POSI_dominios';
 import { REST_URL_ORIENTADOR, REST_URL_PAGE } from 'src/app/shared/constantes/REST_API_URLs';
@@ -39,12 +38,12 @@ export class ExportaPageComponent implements OnInit {
 
     //Percorrendo todos os grupos de alunos cadastrados
     this.dao.getObjects(REST_URL_ORIENTADOR).subscribe((data: Orientando[]) => {
-      console.log(data)
+      //console.log(data)
       this.participants = data;
       //pegando os pages de cada grupo
       this.participants.forEach(participant => {
         this.dao.getPageOrientador(participant.id.toString()).subscribe((dataPage: Page[]) => {
-          console.log(dataPage);
+          //console.log(dataPage);
           this.pages = dataPage;
           this.pages.forEach(page => {
             this.verPage(page.id);
@@ -172,7 +171,7 @@ export class ExportaPageComponent implements OnInit {
 }
 
 pageCompleto(p : Page): boolean {
-  console.log(p.multidisciplinaryDomain)
+  //console.log(p.multidisciplinaryDomain)
   if (p.participant_situation.id < 1) return false;
   if (p.multidisciplinaryDomain.id < 1) return false;
   if (p.psychologicalAspects.id < 1) return false;
