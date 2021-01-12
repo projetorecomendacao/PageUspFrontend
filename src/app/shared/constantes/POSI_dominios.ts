@@ -12,3 +12,9 @@ export const POSI_lowSocialSupport = 8;
 export const POSI_violence = 9;
 export const POSI_environmentalProblems = 10;
 export const POSI_falls = 11;
+
+// Max scores das dimensões
+export const PSI_max_score = 19;
+export const BIO_max_score = 33;
+export const SOC_max_score = 31;
+export const MUL_max_score = 16;
