@@ -112,6 +112,7 @@ import { LerPesoAlturaComponent } from '../shared/visual/ler-peso-altura/ler-pes
 import { PrivateIndexComponent } from './private-index/private-index.component';
 import { AvaliacaoComponent } from './avaliacao/avaliacao.component';
 import { AvaliacaoForm } from '../shared/forms/avaliacao.form';
+import { ExportaPageComponent } from './exporta-page/exporta-page.component';
 
 
 export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
@@ -181,6 +182,7 @@ export const options: Partial<IConfig> | (() => Partial<IConfig>) = null;
     LerPesoAlturaComponent,
     PrivateIndexComponent,
     AvaliacaoComponent,
+    ExportaPageComponent,
   ],
   imports: [
     CommonModule,

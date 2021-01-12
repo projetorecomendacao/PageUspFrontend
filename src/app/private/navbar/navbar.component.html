@@ -1,10 +1,8 @@
-    <div *ngIf="desenvolvedor()" class="caixa-100" style="background-color: whitesmoke;">
-        <a class="btn btn-outline-success" [routerLink]="['/home']">Criar PAGe</a>
-        <a class="btn btn-outline-success" [routerLink]="['/orientador']">Gerenciar Alunos</a>
-        <a class="btn btn-outline-success" [routerLink]="['/avaliacao']">Avaliar Sistema</a>
+    <div class="caixa-100" style="background-color: whitesmoke;">
+        <div style="float: left;"><a class="btn btn-outline-success" [routerLink]="['/home']">Criar PAGe</a></div>
+        <div *ngIf="desenvolvedor()" style="float: left;"><a class="btn btn-outline-success" [routerLink]="['/orientador']">Gerenciar Alunos</a></div>
+        <div style="float: left;"><a class="btn btn-outline-success" [routerLink]="['/avaliacao']">Avaliar Sistema</a></div>
+        <div *ngIf="desenvolvedor2()" style="float: left;"><a class="btn btn-outline-success" [routerLink]="['/exportar-page']">Exportar Page</a></div>
     </div>
-    <div *ngIf="!desenvolvedor()" class="caixa-100" style="background-color: whitesmoke;">
-        <a class="btn btn-outline-success" [routerLink]="['/home']">Criar PAGe</a>
-        <a class="btn btn-outline-success" [routerLink]="['/avaliacao']">Avaliar Sistema</a>
-    </div>
+
 

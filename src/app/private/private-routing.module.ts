@@ -12,6 +12,7 @@ import { OrientadorListPageComponent } from './orientador-usp/orientador-list-pa
 import { PageViewComponent } from './orientador-usp/page-view/page-view.component';
 import { PrivateIndexComponent } from './private-index/private-index.component';
 import { AvaliacaoComponent } from './avaliacao/avaliacao.component';
+import { ExportaPageComponent } from './exporta-page/exporta-page.component';
 
 
 
@@ -30,6 +31,7 @@ const routes: Routes = [
           { path: 'page',component: PageComponent},
         ]
       },
+      { path: 'exportar-page', component : ExportaPageComponent},
       { path: 'orientador', component : OrientadorUspComponent},
       { path: 'participantEdit/:id', component : ParticipantEditComponent},
       { path: 'orientadorEdit/:id', component : OrientadorEditComponent},

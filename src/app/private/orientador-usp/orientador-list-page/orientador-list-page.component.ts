@@ -10,6 +10,7 @@ import { DAOService } from 'src/app/shared/services/dao.service';
 import { PageGerador } from 'src/app/shared/services/page.gerador';
 import { PageService } from 'src/app/shared/services/page.service';
 import {Participant} from 'src/app/shared/models/participant.model';
+import { BIO_max_score, MUL_max_score, PSI_max_score, SOC_max_score } from 'src/app/shared/constantes/POSI_dominios';
 
 @Component({
   selector: 'app-orientador-list-page',
@@ -53,7 +54,7 @@ export class OrientadorListPageComponent implements OnInit {
           negative_attitudes_aging_instance : response.negativeAttitudesAging[0], 
           depression_instance :  response.depression[0],
           comments :  response.psi[0].comments,
-          max_score : 19
+          max_score : PSI_max_score
         }
 
 
@@ -66,7 +67,7 @@ export class OrientadorListPageComponent implements OnInit {
           cardiovascularFactors_instance: response.cardiovascularFactors[0],
           misuseMedications_instance: response.misuseMedications[0],
           comments: response.bio[0].comments,
-          max_score: 33
+          max_score: BIO_max_score
         }  
 
         //monta os aspectos sociais do PAGe
@@ -76,7 +77,7 @@ export class OrientadorListPageComponent implements OnInit {
           environmentalProblems_instance: response.environmentalProblems[0],
           violence_instance: response.violence[0],
           comments: response.soc[0].comments,
-          max_score : 31
+          max_score : SOC_max_score
         }
 
         //monta os aspectos multidimensional do PAGe
@@ -84,7 +85,7 @@ export class OrientadorListPageComponent implements OnInit {
           id: response.mul[0].id,
           falls_instance: response.falls[0],
           comments: response.mul[0].comments,
-          max_score: 16
+          max_score: MUL_max_score
         }
         //cria o page
 
