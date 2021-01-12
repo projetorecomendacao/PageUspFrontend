@@ -139,27 +139,33 @@ export class ExportaPageComponent implements OnInit {
         localForm = this.pageForm.geraFormGroup(page_);
         let dominio = '';
         let dimensao = '';
+        let vetRespota : string[] = new Array(105);
+        // Cria o vetor de resposta só com zero..
+        for (let i1=1; i1 < 105; i1++){
+          vetRespota[i1]='0';
+        }
         for (let posDominio=0; posDominio < 12; posDominio++){
           dominio = this.checaCampo.getDominio(posDominio);
           dimensao = this.checaCampo.getDimensao(posDominio);
+          //Preenche o Vetor de Resposta de acordo com os pesos das questões
           for (let posQuestao = this.checaCampo.getQuestaoInicio(posDominio); posQuestao <= this.checaCampo.getQuestaoFim(posDominio); posQuestao++ ){
-            let valorQuestao = '0';
             if (this.checaCampo.campo(posQuestao) != "0") { //Verifica se o campo tem questão
               let _campo = localForm.get(dimensao).get(dominio).get(this.checaCampo.campo(posQuestao)).value;
               let _sim = this.checaCampo.sim(posQuestao);
+              //Verifica se a resposta vale um ou zero...
               if ( _campo == 'S' && _sim == '1'){
-                valorQuestao = '1';
+                vetRespota[posQuestao]='1'; 
               }
               if ( _campo == 'N' && _sim == '0'){
-                valorQuestao = '1';
+                vetRespota[posQuestao]='1'; 
               }
-            }
-            respostaPage += valorQuestao
-            if (posQuestao < 104) {
-              respostaPage += ','
             }
           }
         }
+        for (let i2=1; i2 < 104; i2++){
+          respostaPage += vetRespota[i2] + ',';
+        }
+        respostaPage += vetRespota[104];
         this.lista.push(respostaPage);
       }
     },error => {
