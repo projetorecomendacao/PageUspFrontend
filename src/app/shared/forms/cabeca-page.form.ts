@@ -16,7 +16,7 @@ export class CabecaPageForm{
   geraFormGroup(data?: Page): FormGroup {
     if (data){
       this.cabecaPageForm = this.fb.group({
-        service: [data.service,[Validators.required]],
+        service: [data.service,[Validators.required, Validators.maxLength(60)]],
         entrance: [data.entrance,[Validators.required]],
         interviewed: [data.interviewed,[Validators.required]],
         interviewer: [data.interviewer,[Validators.required]],
@@ -30,7 +30,7 @@ export class CabecaPageForm{
     else 
     {
       this.cabecaPageForm= this.fb.group({
-        service: ['',[Validators.required]],
+        service: ['',[Validators.required,Validators.maxLength(60)]],
         entrance: ['',[Validators.required]],
         interviewed: ['',[Validators.required]],
         interviewer: [this.userService.getName(),[Validators.required]],

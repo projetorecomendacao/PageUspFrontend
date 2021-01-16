@@ -29,13 +29,16 @@ export class ExportaPageComponent implements OnInit {
 
   ngOnInit(): void {
     // Montando o cabeçalho
+    
     let cabeca: string = 'ID,';
     for (let i=1; i<104; i++){
       cabeca += 'Q' + i.toString() + ',';
     }
-    cabeca += 'Q104';
-    this.lista.push(cabeca);
 
+    cabeca += 'Q104,Déficit Cognitivo,Atitude Neg. Envelhecimento,Depressão,Déficit Sensorial,Incap. Funcional,Desnutrição,DCV,Uso Inad. Medicamentos,Baixo Sup. Social,Violência,Problemas Ambientais,Quedas';
+    cabeca += ',Psicológicos, Biológicos, Sociais, Multidimensional';
+    this.lista.push(cabeca);
+    
     //Percorrendo todos os grupos de alunos cadastrados
     this.dao.getObjects(REST_URL_ORIENTADOR).subscribe((data: Orientando[]) => {
       //console.log(data)
@@ -46,6 +49,10 @@ export class ExportaPageComponent implements OnInit {
           //console.log(dataPage);
           this.pages = dataPage;
           this.pages.forEach(page => {
+            // usado para ver como está os PAGe por dimensão..            
+            //this.verPage2(page.id);
+            
+            //relatório do André com as repostas por questão domínio e dimensão..
             this.verPage(page.id);
           });
         }, erro => {
@@ -140,11 +147,14 @@ export class ExportaPageComponent implements OnInit {
         let dominio = '';
         let dimensao = '';
         let vetRespota : string[] = new Array(105);
+        let vetDominio : number[] = new Array(12);
         // Cria o vetor de resposta só com zero..
         for (let i1=1; i1 < 105; i1++){
           vetRespota[i1]='0';
         }
         for (let posDominio=0; posDominio < 12; posDominio++){
+          // Zera o vetor de resposta de domínios
+          vetDominio[posDominio]=0;
           dominio = this.checaCampo.getDominio(posDominio);
           dimensao = this.checaCampo.getDimensao(posDominio);
           //Preenche o Vetor de Resposta de acordo com os pesos das questões
@@ -154,18 +164,27 @@ export class ExportaPageComponent implements OnInit {
               let _sim = this.checaCampo.sim(posQuestao);
               //Verifica se a resposta vale um ou zero...
               if ( _campo == 'S' && _sim == '1'){
-                vetRespota[posQuestao]='1'; 
+                vetRespota[posQuestao]='1';
+                vetDominio[posDominio]++; 
               }
               if ( _campo == 'N' && _sim == '0'){
-                vetRespota[posQuestao]='1'; 
+                vetRespota[posQuestao]='1';
+                vetDominio[posDominio]++; 
               }
             }
           }
         }
-        for (let i2=1; i2 < 104; i2++){
+        for (let i2=1; i2 <= 104; i2++){
           respostaPage += vetRespota[i2] + ',';
         }
-        respostaPage += vetRespota[104];
+        for (let i3=0; i3 < 12; i3++){
+          respostaPage += vetDominio[i3].toString() + ',';
+        }
+        let psi = vetDominio[0] + vetDominio[1] + vetDominio[2]  
+        let bio = vetDominio[3] + vetDominio[4] + vetDominio[5] + vetDominio[6]  + vetDominio[7]   
+        let soc = vetDominio[8] + vetDominio[9] + vetDominio[10]  
+        let mul = vetDominio[11]
+        respostaPage += psi.toString() + ',' + bio.toString() + ',' + soc.toString() + ',' + mul.toString()
         this.lista.push(respostaPage);
       }
     },error => {
@@ -184,6 +203,29 @@ pageCompleto(p : Page): boolean {
   if (p.biologicalAspects.id < 1) return false;
   if (p.socialAspects.id < 1) return false;
   return true
+}
+
+
+
+// Método utilizado apenas para ver os alunos que já terminaram..
+// Sets the page and redirects
+ verPage2(page : number){
+  if (page > 0) {
+    this.dao.getObject(REST_URL_PAGE,page.toString()).subscribe((response : any)  =>{
+      //monta os aspectos psicológicos do PAGe
+      let volta: string = response.cabecaPage.interviewer;
+      volta += '  Psi: ' + response.psi[0].id;
+      volta += '  Bio: ' + response.bio[0].id;
+      volta += '  Soc: ' + response.soc[0].id;
+      volta += '  Mul: ' + response.mul[0].id;
+      volta += '  Map: ' + response.demandMap[0].id;
+      this.lista.push(volta);
+    },error => {
+      alert('Page não encontrado..');  
+    });
+  } else {
+    alert('Page Não encontrado!!!')
+  }
 }
 
 }

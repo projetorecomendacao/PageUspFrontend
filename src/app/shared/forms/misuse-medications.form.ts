@@ -26,7 +26,7 @@ export class MisuseMedicationsForm{
         q44_diseases_last_5_years_j: [data.q44_diseases_last_5_years_j,[Validators.required]],
         q44_diseases_last_5_years_k: [data.q44_diseases_last_5_years_k,[Validators.required]],
         q44_diseases_last_5_years_l: [data.q44_diseases_last_5_years_l,[Validators.required]],
-        q44_diseases_last_5_years_l_other: [data.q44_diseases_last_5_years_l_other,[Validators.required]],
+        q44_diseases_last_5_years_l_other: [data.q44_diseases_last_5_years_l_other,[Validators.maxLength(200)]],
         q44_diseases_last_5_years_amount: [data.q44_diseases_last_5_years_amount,[Validators.required]],
         
         q45_health_problems_a: [data.q45_health_problems_a,[Validators.required]],
@@ -37,7 +37,7 @@ export class MisuseMedicationsForm{
         q45_health_problems_f: [data.q45_health_problems_f,[Validators.required]],
         q45_health_problems_g: [data.q45_health_problems_g,[Validators.required]],
         q45_health_problems_h: [data.q45_health_problems_h,[Validators.required]],
-        q45_health_problems_h_other: [data.q45_health_problems_h_other,[Validators.required]],
+        q45_health_problems_h_other: [data.q45_health_problems_h_other,[Validators.maxLength(200)]],
         
         q46_medicines: [data.q46_medicines,[Validators.required]],
         q46_medicines_polypharmacy: [data.q46_medicines_polypharmacy,[Validators.required]],
@@ -70,7 +70,7 @@ export class MisuseMedicationsForm{
         q44_diseases_last_5_years_j: ['',[Validators.required]],
         q44_diseases_last_5_years_k: ['',[Validators.required]],
         q44_diseases_last_5_years_l: ['',[Validators.required]],
-        q44_diseases_last_5_years_l_other: ['',[Validators.required]],
+        q44_diseases_last_5_years_l_other: ['',[Validators.maxLength(200)]],
         q44_diseases_last_5_years_amount: ['',[Validators.required]],
         
         q45_health_problems_a: ['',[Validators.required]],
@@ -81,7 +81,7 @@ export class MisuseMedicationsForm{
         q45_health_problems_f: ['',[Validators.required]],
         q45_health_problems_g: ['',[Validators.required]],
         q45_health_problems_h: ['',[Validators.required]],
-        q45_health_problems_h_other: ['',[Validators.required]],
+        q45_health_problems_h_other: ['',[Validators.maxLength(200)]],
         
         q46_medicines: ['',[Validators.required]],
         q46_medicines_polypharmacy: ['',[Validators.required]],
@@ -101,4 +101,4 @@ export class MisuseMedicationsForm{
     }
     return this.misuseMedicationsForm;
   }
-}
+}Validators.required
