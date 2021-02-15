@@ -50,10 +50,10 @@ export class ExportaPageComponent implements OnInit {
           this.pages = dataPage;
           this.pages.forEach(page => {
             // usado para ver como está os PAGe por dimensão..            
-            //this.verPage2(page.id);
+            this.verPage2(page.id);
             
             //relatório do André com as repostas por questão domínio e dimensão..
-            this.verPage(page.id);
+            //this.verPage(page.id);
           });
         }, erro => {
           alert('Não foi possível acessar os dados');
@@ -214,6 +214,7 @@ pageCompleto(p : Page): boolean {
     this.dao.getObject(REST_URL_PAGE,page.toString()).subscribe((response : any)  =>{
       //monta os aspectos psicológicos do PAGe
       let volta: string = response.cabecaPage.interviewer;
+      volta += '  ID: '  + response.cabecaPage.id;
       volta += '  Psi: ' + response.psi[0].id;
       volta += '  Bio: ' + response.bio[0].id;
       volta += '  Soc: ' + response.soc[0].id;
