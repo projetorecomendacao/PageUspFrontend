@@ -40,6 +40,7 @@ export class LoginComponent implements OnInit {
       rejection => {
         this.authGuard.setCanLoad(false);
         console.error(rejection);
+        console.log("Falhou conexão....");
       }
     );
   }
